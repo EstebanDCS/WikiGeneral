@@ -1,16 +1,29 @@
 ---
 title: Wiki Overview
+description: Estado general de la wiki y cobertura de contenidos.
 type: overview
-last_updated: 2026-04-08
+date: 2026-04-08
 ---
 
-## Current State
+## Estado actual
 
-La wiki cubre **todos los materiales disponibles de Sistemas Inteligentes**: 20 fuentes, 15 topics, 2 entidades. La asignatura tiene cobertura completa de teoría y prácticas.
+La wiki cubre **todos los materiales disponibles de Sistemas Inteligentes**: 20 fuentes, 15 topics, 2 entidades. Cobertura completa de teoría y prácticas.
 
-## Themes & Domains
+## Estructura
 
-### Sistemas Inteligentes (Universidad) — Cobertura completa
+```
+wiki/
+├── sistemas-inteligentes/
+│   ├── fundamentos/       → 7 temas (IA, KDD, Preprocesado, Codificación, Visualización, Reducción)
+│   ├── algoritmos/        → 5 temas (Regresión, Validación, Clasificación, Redes, CNN)
+│   ├── conceptos-clave/   → 3 temas (Overfitting, Desbalanceo, Herramientas Python)
+│   ├── fuentes/
+│   │   ├── teoria/        → 11 documentos (PDFs Temas 1.0–3.1 + ejercicio + 2 PPTXs pendientes)
+│   │   └── practicas/     → 9 notebooks (P2.1–P4.3, dataset F1 Monaco 2023)
+│   └── personas/          → John McCarthy, Frank Rosenblatt
+```
+
+## Cobertura de Sistemas Inteligentes
 
 ```
 TEORÍA
@@ -47,7 +60,7 @@ PENDIENTE
 └── Representación Vectorial (pptx — abrir manualmente)
 ```
 
-## Key Open Questions
+## Preguntas abiertas
 
 - ¿Qué contienen exactamente los PPTXs de Anomalías y Representación Vectorial?
 - ¿Hay más temas o exámenes de años anteriores disponibles?

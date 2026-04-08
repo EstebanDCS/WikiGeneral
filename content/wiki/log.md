@@ -1,5 +1,12 @@
 # Activity Log
 
+## [2026-04-08] reorganize | Estructura por carpetas + optimización Quartz
+- Acción: reorganizados todos los archivos de wiki/ en subcarpetas por asignatura y sección
+- Nueva estructura: sistemas-inteligentes/{fundamentos, algoritmos, conceptos-clave, fuentes/{teoria,practicas}, personas}
+- Creadas páginas índice (index.md) para cada carpeta
+- Frontmatter actualizado en todos los archivos: añadidos `description` y `date` (compatibilidad Quartz)
+- wiki/index.md rediseñado como home page navegable
+
 ## [2026-04-08] ingest | Prácticas y archivos finales de Sistemas Inteligentes
 - Sources: Ejercicio métricas (pdf), P2.1–P4.3 (9 notebooks), T7 Anomalías (pptx), Representación Vectorial (pptx)
 - Archivos movidos a: raw/pdfs/sistemas-inteligentes/, raw/notes/sistemas-inteligentes/, raw/presentations/sistemas-inteligentes/
