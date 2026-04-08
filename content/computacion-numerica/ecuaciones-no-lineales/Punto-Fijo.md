@@ -76,19 +76,28 @@ La iteración $x_{n+1} = g(x_n)$ equivale a:
 3. Moverse horizontalmente hasta la recta $y = x$ → obtienes el punto $(g(x_n), g(x_n))$.
 4. El punto fijo es la intersección de $y = g(x)$ con $y = x$.
 
-```
-y = x  ←— recta bisectriz
-y = g(x) ←— la función de iteración
+<svg viewBox="0 0 300 300" width="300" height="300" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <line x1="40" y1="280" x2="40" y2="20" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="40" y1="280" x2="285" y2="280" stroke="currentColor" stroke-width="1.2"/>
+  <text x="287" y="284" font-size="11" fill="currentColor">x</text>
+  <text x="44" y="18" font-size="11" fill="currentColor">y</text>
+  <line x1="40" y1="280" x2="280" y2="40" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.5"/>
+  <text x="268" y="36" font-size="11" fill="currentColor">y=x</text>
+  <line x1="40" y1="220" x2="280" y2="100" stroke="#4a7fa5" stroke-width="2.5"/>
+  <text x="283" y="98" font-size="11" fill="#4a7fa5">g(x)</text>
+  <circle cx="160" cy="160" r="6" fill="none" stroke="#c0582a" stroke-width="2.5"/>
+  <text x="164" y="152" font-size="10" fill="#c0582a">r</text>
+  <polyline points="64,280 64,208 112,208 112,184 136,184 136,172 148,172 148,166 154,166 154,163 157,163 157,161 160,160" fill="none" stroke="#5ba85e" stroke-width="1.8" stroke-linejoin="miter"/>
+  <line x1="64" y1="278" x2="64" y2="282" stroke="currentColor" stroke-width="1"/>
+  <text x="57" y="294" font-size="11" fill="#5ba85e">x₀</text>
+  <line x1="112" y1="278" x2="112" y2="282" stroke="currentColor" stroke-width="1"/>
+  <text x="105" y="294" font-size="11" fill="#5ba85e">x₁</text>
+  <line x1="136" y1="278" x2="136" y2="282" stroke="currentColor" stroke-width="1"/>
+  <text x="129" y="294" font-size="11" fill="#5ba85e">x₂</text>
+  <text x="168" y="294" font-size="10" fill="#5ba85e">→ r</text>
+</svg>
 
-        ╱│
-       ╱ │
-──────╱──●── punto fijo r (donde se cruzan)
-     ╱ ╱
-    ╱ ╱  ← la espiral de la iteración converge
-   ╱╱
-```
-
-Cuando $|g'(r)| < 1$: la espiral converge. Cuando $|g'(r)| > 1$: la espiral diverge.
+Cuando $|g'(r)| < 1$: la escalera converge al punto fijo. Cuando $|g'(r)| > 1$: la sucesión diverge.
 
 ---
 

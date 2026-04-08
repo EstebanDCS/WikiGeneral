@@ -93,6 +93,35 @@ $$x_n = \frac{a_n \cdot f(b_n) - b_n \cdot f(a_n)}{f(b_n) - f(a_n)}$$
 | **Bisección** | $x_n = \dfrac{a_n + b_n}{2}$ | Punto central geométrico |
 | **Regula Falsi** | $x_n = \dfrac{a_n f(b_n) - b_n f(a_n)}{f(b_n) - f(a_n)}$ | Ponderado por los valores de $f$ |
 
+<svg viewBox="0 0 500 220" width="500" height="220" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <line x1="60" y1="120" x2="455" y2="120" stroke="currentColor" stroke-width="1.2"/>
+  <text x="458" y="124" font-size="11" fill="currentColor">x</text>
+  <line x1="80" y1="115" x2="80" y2="125" stroke="currentColor" stroke-width="1.5"/>
+  <text x="74" y="140" font-size="12" fill="currentColor">a</text>
+  <line x1="420" y1="115" x2="420" y2="125" stroke="currentColor" stroke-width="1.5"/>
+  <text x="415" y="140" font-size="12" fill="currentColor">b</text>
+  <text x="52" y="175" font-size="11" fill="#c0582a">f(a)&lt;0</text>
+  <text x="390" y="40" font-size="11" fill="#5ba85e">f(b)&gt;0</text>
+  <path d="M 80,170 C 120,165 170,135 215,120 C 265,105 340,72 420,42" fill="none" stroke="#4a7fa5" stroke-width="2.5"/>
+  <line x1="80" y1="170" x2="420" y2="42" stroke="#9b59b6" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.8"/>
+  <circle cx="80" cy="170" r="4" fill="#c0582a"/>
+  <circle cx="420" cy="42" r="4" fill="#5ba85e"/>
+  <circle cx="215" cy="120" r="6" fill="none" stroke="#4a7fa5" stroke-width="2"/>
+  <text x="207" y="113" font-size="11" fill="#4a7fa5">r</text>
+  <circle cx="250" cy="120" r="5" fill="#e07b39"/>
+  <line x1="250" y1="115" x2="250" y2="125" stroke="#e07b39" stroke-width="1.5"/>
+  <text x="242" y="142" font-size="11" fill="#e07b39">m_B</text>
+  <circle cx="214" cy="120" r="5" fill="#9b59b6"/>
+  <line x1="214" y1="115" x2="214" y2="125" stroke="#9b59b6" stroke-width="1.5"/>
+  <text x="188" y="153" font-size="11" fill="#9b59b6">m_RF</text>
+  <line x1="80" y1="170" x2="80" y2="120" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+  <line x1="420" y1="42" x2="420" y2="120" stroke="currentColor" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+  <circle cx="72" cy="200" r="4" fill="#e07b39"/>
+  <text x="80" y="204" font-size="11" fill="currentColor">Bisección: punto medio (a+b)/2</text>
+  <circle cx="72" cy="216" r="4" fill="#9b59b6"/>
+  <text x="80" y="220" font-size="11" fill="currentColor">Regula Falsi: intersección de la secante (más cerca de r)</text>
+</svg>
+
 Regula Falsi es generalmente **más rápido** que bisección porque usa información sobre el valor de $f$, no solo su signo. Sin embargo, en algunos casos uno de los extremos puede "quedarse fijo" muchas iteraciones, siendo bisección más fiable en la práctica.
 
 ---

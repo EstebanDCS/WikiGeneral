@@ -54,6 +54,38 @@ $$\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n$$
 
 Los coeficientes $\beta$ se calculan por **mínimos cuadrados** (minimizar $\sum (y - \hat{y})^2$).
 
+<svg viewBox="0 0 420 260" width="420" height="260" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <line x1="65" y1="230" x2="390" y2="230" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="65" y1="230" x2="65" y2="20" stroke="currentColor" stroke-width="1.2"/>
+  <text x="393" y="234" font-size="12" fill="currentColor">X</text>
+  <text x="50" y="18" font-size="12" fill="currentColor">Y</text>
+  <line x1="68" y1="204" x2="388" y2="74" stroke="#c0582a" stroke-width="2"/>
+  <text x="358" y="68" font-size="11" fill="#c0582a">ŷ=β₀+β₁x</text>
+  <circle cx="80" cy="198" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="100" cy="185" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="120" cy="180" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="140" cy="175" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="160" cy="162" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="180" cy="150" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="200" cy="148" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="220" cy="138" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="240" cy="132" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="260" cy="122" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="280" cy="112" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="300" cy="108" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="320" cy="95" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="340" cy="88" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="360" cy="80" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <line x1="80" y1="198" x2="80" y2="204" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+  <line x1="200" y1="148" x2="200" y2="152" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+  <line x1="300" y1="108" x2="300" y2="104" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+  <text x="84" y="205" font-size="9" fill="currentColor" opacity="0.55">residuo</text>
+  <circle cx="74" cy="248" r="4" fill="#4a7fa5"/>
+  <text x="82" y="252" font-size="11" fill="currentColor">datos observados</text>
+  <line x1="220" y1="248" x2="250" y2="248" stroke="#c0582a" stroke-width="2"/>
+  <text x="254" y="252" font-size="11" fill="currentColor">recta ajustada</text>
+</svg>
+
 **Interpretación de los coeficientes:** $\beta_1$ = cambio esperado en Y por cada unidad que aumenta $x_1$.
 
 | Ventajas | Desventajas |

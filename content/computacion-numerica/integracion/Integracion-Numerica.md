@@ -73,6 +73,31 @@ $$E = -\frac{(b-a)^5}{2880} f^{(4)}(\xi), \quad \xi \in (a,b)$$
 
 El grado de exactitud es el mayor grado $n$ para el que la fórmula es **exacta** para todo polinomio de grado $\leq n$.
 
+<svg viewBox="0 0 480 240" width="480" height="240" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <line x1="50" y1="215" x2="440" y2="215" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="50" y1="215" x2="50" y2="20" stroke="currentColor" stroke-width="1.2"/>
+  <text x="443" y="219" font-size="11" fill="currentColor">x</text>
+  <text x="145" y="228" font-size="11" fill="currentColor">a</text>
+  <text x="323" y="228" font-size="11" fill="currentColor">b</text>
+  <text x="231" y="228" font-size="11" fill="currentColor">m</text>
+  <path d="M 60,155 C 90,138 120,112 150,100 C 190,86 220,89 240,96 C 270,106 300,133 330,146 C 360,162 395,188 420,204" fill="none" stroke="#4a7fa5" stroke-width="2.5"/>
+  <text x="425" y="202" font-size="11" fill="#4a7fa5">f(x)</text>
+  <polygon points="150,100 330,146 330,215 150,215" fill="#c0582a" opacity="0.15"/>
+  <line x1="150" y1="100" x2="330" y2="146" stroke="#c0582a" stroke-width="1.8" stroke-dasharray="5,3"/>
+  <path d="M 150,215 L 150,100 Q 240,69 330,146 L 330,215 Z" fill="#5ba85e" opacity="0.18"/>
+  <path d="M 150,100 Q 240,69 330,146" fill="none" stroke="#5ba85e" stroke-width="2" stroke-dasharray="4,3"/>
+  <line x1="150" y1="100" x2="150" y2="215" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+  <line x1="240" y1="96" x2="240" y2="215" stroke="currentColor" stroke-width="1" opacity="0.35" stroke-dasharray="3,2"/>
+  <line x1="330" y1="146" x2="330" y2="215" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+  <circle cx="150" cy="100" r="3" fill="currentColor"/>
+  <circle cx="240" cy="96" r="3" fill="currentColor"/>
+  <circle cx="330" cy="146" r="3" fill="currentColor"/>
+  <rect x="60" y="20" width="14" height="10" fill="#c0582a" opacity="0.4"/>
+  <text x="78" y="30" font-size="11" fill="currentColor">Trapecio (recta entre extremos)</text>
+  <rect x="60" y="36" width="14" height="10" fill="#5ba85e" opacity="0.5"/>
+  <text x="78" y="46" font-size="11" fill="currentColor">Simpson (parábola por a, m, b) — más preciso</text>
+</svg>
+
 ---
 
 ## Fórmulas Compuestas
