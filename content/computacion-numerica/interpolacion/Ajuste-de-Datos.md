@@ -22,6 +22,33 @@ tags: [minimos-cuadrados, ajuste, regresion, computacion-numerica, universidad]
 > [!example] Intuición
 > Si mides la posición de un móvil 10 veces y hay ruido en el sensor, no tiene sentido construir un polinomio de grado 9 que pase exactamente por todos los puntos. Mejor ajustar una recta o parábola que capture la tendencia.
 
+<svg viewBox="0 0 440 220" width="440" height="220" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <line x1="55" y1="190" x2="410" y2="190" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="55" y1="190" x2="55" y2="15" stroke="currentColor" stroke-width="1.2"/>
+  <text x="413" y="194" font-size="11" fill="currentColor">x</text>
+  <text x="40" y="13" font-size="11" fill="currentColor">y</text>
+  <circle cx="80" cy="145" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="110" cy="125" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="140" cy="140" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="170" cy="105" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="200" cy="118" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="230" cy="92" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="260" cy="100" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="290" cy="78" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="320" cy="85" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="350" cy="60" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <circle cx="380" cy="70" r="4" fill="#4a7fa5" opacity="0.85"/>
+  <line x1="70" y1="153" x2="395" y2="58" stroke="#c0582a" stroke-width="2"/>
+  <text x="358" y="50" font-size="11" fill="#c0582a">ajuste lineal</text>
+  <path d="M 70,153 C 120,148 160,135 200,118 C 250,98 300,80 395,70" fill="none" stroke="#5ba85e" stroke-width="1.8" stroke-dasharray="5,3"/>
+  <text x="358" y="73" font-size="10" fill="#5ba85e">(interpolación: pasa</text>
+  <text x="358" y="83" font-size="10" fill="#5ba85e"> exactamente)</text>
+  <line x1="80" y1="145" x2="80" y2="148" stroke="#c0582a" stroke-width="1" stroke-dasharray="2,2" opacity="0.6"/>
+  <line x1="200" y1="118" x2="200" y2="112" stroke="#c0582a" stroke-width="1" stroke-dasharray="2,2" opacity="0.6"/>
+  <line x1="350" y1="60" x2="350" y2="68" stroke="#c0582a" stroke-width="1" stroke-dasharray="2,2" opacity="0.6"/>
+  <text x="108" y="210" font-size="10" fill="currentColor" opacity="0.6">residuos: diferencia entre dato y recta ajustada</text>
+</svg>
+
 ---
 
 ## Ajuste Lineal (Regresión Lineal)

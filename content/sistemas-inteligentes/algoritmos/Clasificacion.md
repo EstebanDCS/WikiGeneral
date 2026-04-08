@@ -55,11 +55,39 @@ $$P(y=1) = \frac{1}{1 + e^{-z}} \quad \text{(sigmoide} \to \text{probabilidad en
 
 Busca el **hiperplano que maximiza el margen** entre las dos clases.
 
-```
-Clase +1  ·  ·  ·
-                   ← margen →
-Clase -1  ×  ×  ×
-```
+<svg viewBox="0 0 420 250" width="420" height="250" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <circle cx="90" cy="150" r="5" fill="#4a7fa5"/>
+  <circle cx="140" cy="105" r="5" fill="#4a7fa5"/>
+  <circle cx="195" cy="85" r="5" fill="#4a7fa5"/>
+  <circle cx="245" cy="92" r="5" fill="#4a7fa5"/>
+  <circle cx="115" cy="128" r="5" fill="#4a7fa5"/>
+  <circle cx="175" cy="62" r="5" fill="#4a7fa5"/>
+  <rect x="116" y="210" width="8" height="8" fill="#c0582a"/>
+  <rect x="166" y="190" width="8" height="8" fill="#c0582a"/>
+  <rect x="226" y="170" width="8" height="8" fill="#c0582a"/>
+  <rect x="276" y="160" width="8" height="8" fill="#c0582a"/>
+  <rect x="308" y="150" width="8" height="8" fill="#c0582a"/>
+  <rect x="346" y="165" width="8" height="8" fill="#c0582a"/>
+  <line x1="80" y1="165" x2="380" y2="45" stroke="#5ba85e" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="80" y1="215" x2="380" y2="95" stroke="#5ba85e" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="80" y1="190" x2="380" y2="70" stroke="currentColor" stroke-width="2"/>
+  <text x="383" y="68" font-size="10" fill="currentColor">w·x+b=0</text>
+  <circle cx="170" cy="129" r="10" fill="none" stroke="#5ba85e" stroke-width="2"/>
+  <circle cx="170" cy="129" r="5" fill="#4a7fa5"/>
+  <circle cx="205" cy="167" r="10" fill="none" stroke="#5ba85e" stroke-width="2"/>
+  <rect x="201" y="163" width="8" height="8" fill="#c0582a"/>
+  <line x1="320" y1="69" x2="320" y2="119" stroke="currentColor" stroke-width="1"/>
+  <line x1="317" y1="69" x2="323" y2="69" stroke="currentColor" stroke-width="1"/>
+  <line x1="317" y1="119" x2="323" y2="119" stroke="currentColor" stroke-width="1"/>
+  <text x="326" y="97" font-size="10" fill="currentColor">margen</text>
+  <text x="326" y="109" font-size="10" fill="currentColor">máximo</text>
+  <circle cx="65" cy="235" r="5" fill="#4a7fa5"/>
+  <text x="74" y="239" font-size="11" fill="currentColor">Clase +1</text>
+  <rect x="160" y="230" width="8" height="8" fill="#c0582a"/>
+  <text x="172" y="239" font-size="11" fill="currentColor">Clase −1</text>
+  <circle cx="265" cy="235" r="5" fill="none" stroke="#5ba85e" stroke-width="2"/>
+  <text x="274" y="239" font-size="11" fill="currentColor">vectores soporte</text>
+</svg>
 
 **Conceptos clave:**
 - **Vectores soporte**: los puntos más cercanos al hiperplano (los que lo definen)

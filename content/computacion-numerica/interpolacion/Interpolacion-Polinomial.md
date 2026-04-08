@@ -23,6 +23,36 @@ $$P_n(x_i) = f(x_i), \quad i = 0, 1, \ldots, n$$
 
 **El resultado fundamental:** dado un conjunto de $n+1$ nodos distintos y valores, existe **un único** polinomio de grado $\leq n$ que los interpola.
 
+<svg viewBox="0 0 420 230" width="420" height="230" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <line x1="60" y1="200" x2="400" y2="200" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="60" y1="200" x2="60" y2="15" stroke="currentColor" stroke-width="1.2"/>
+  <text x="403" y="204" font-size="11" fill="currentColor">x</text>
+  <text x="64" y="13" font-size="11" fill="currentColor">f(x)</text>
+  <path d="M 80,180 C 110,80 130,100 160,100 C 200,100 220,178 260,160 C 300,142 330,60 360,80" fill="none" stroke="#4a7fa5" stroke-width="2.5"/>
+  <text x="365" y="75" font-size="11" fill="#4a7fa5">P₃(x)</text>
+  <circle cx="80" cy="180" r="5" fill="#c0582a"/>
+  <circle cx="160" cy="100" r="5" fill="#c0582a"/>
+  <circle cx="260" cy="160" r="5" fill="#c0582a"/>
+  <circle cx="360" cy="80" r="5" fill="#c0582a"/>
+  <line x1="80" y1="198" x2="80" y2="202" stroke="currentColor" stroke-width="1"/>
+  <text x="73" y="215" font-size="11" fill="currentColor">x₀</text>
+  <line x1="160" y1="198" x2="160" y2="202" stroke="currentColor" stroke-width="1"/>
+  <text x="153" y="215" font-size="11" fill="currentColor">x₁</text>
+  <line x1="260" y1="198" x2="260" y2="202" stroke="currentColor" stroke-width="1"/>
+  <text x="253" y="215" font-size="11" fill="currentColor">x₂</text>
+  <line x1="360" y1="198" x2="360" y2="202" stroke="currentColor" stroke-width="1"/>
+  <text x="353" y="215" font-size="11" fill="currentColor">x₃</text>
+  <line x1="80" y1="180" x2="80" y2="200" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.3"/>
+  <line x1="160" y1="100" x2="160" y2="200" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.3"/>
+  <line x1="260" y1="160" x2="260" y2="200" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.3"/>
+  <line x1="360" y1="80" x2="360" y2="200" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.3"/>
+  <text x="84" y="177" font-size="9" fill="#c0582a">f(x₀)</text>
+  <text x="164" y="97" font-size="9" fill="#c0582a">f(x₁)</text>
+  <text x="264" y="157" font-size="9" fill="#c0582a">f(x₂)</text>
+  <text x="364" y="77" font-size="9" fill="#c0582a">f(x₃)</text>
+  <text x="80" y="14" font-size="11" fill="currentColor">P₃(xᵢ) = f(xᵢ)  para i = 0, 1, 2, 3</text>
+</svg>
+
 ---
 
 ## Forma de Lagrange
