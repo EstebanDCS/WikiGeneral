@@ -1,5 +1,13 @@
 # Activity Log
 
+## [2026-04-08] ingest | Ingeniería de Redes — Asignatura completa
+- Sources: 14 PDFs de teoría + 10+ PDFs de prácticas (Profs. Roberto García, Ángel Neira, Carlos González — Univ. Oviedo)
+- Archivos organizados en: raw/pdfs/ingenieria-redes/ y raw/pdfs/ingenieria-redes/practicas/
+- Estructura creada: ingenieria-redes/{fundamentos, enrutamiento, servicios, acceso, trafico, practicas, fuentes}
+- Topic pages creadas: Arquitectura-Internet, Subredes-y-CIDR, Sistemas-Autonomos-y-Routing, OSPF, BGP, VLANs-y-Conmutacion, MPLS, IPv6, DHCP, NAT-PAT, ACL, HSRP, EtherChannel-STP, WLAN, Acceso-Banda-Ancha, MANETs, Ingenieria-Trafico, VoIP
+- Output creado: Guia-Packet-Tracer — referencia completa Cisco IOS para todas las prácticas
+- Key takeaways: OSPF es el IGP estrella (estado de enlace, Dijkstra, coste=10^8/BW). BGP conecta los AS en Internet. VLANs + trunking + inter-VLAN routing son el núcleo de las prácticas de switching. ACL extendidas cerca del origen, estándar cerca del destino.
+
 ## [2026-04-08] ingest | Computación Numérica — Temas 1–5 y hojas de problemas
 - Sources: 5 PDFs de teoría + 5 PDFs de problemas (Prof. Alejandro Buendía, Univ. Oviedo)
 - Archivos movidos a: raw/pdfs/computacion-numerica/ y raw/pdfs/computacion-numerica/problemas/

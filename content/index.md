@@ -17,6 +17,7 @@ Base de conocimiento personal. Todo lo que aprendo, organizado y conectado.
 |-----------|--------|-----------|
 | [[sistemas-inteligentes/index\|Sistemas Inteligentes]] | ✅ Completo | 15 temas · 20 fuentes |
 | [[computacion-numerica/index\|Computación Numérica]] | ✅ Completo | 10 temas · 5 PDFs · 5 prob. |
+| [[ingenieria-redes/index\|Ingeniería de Redes]] | ✅ Completo | 17 temas · 14 PDFs teoría · 10 prácticas |
 
 ---
 
@@ -52,9 +53,30 @@ Base de conocimiento personal. Todo lo que aprendo, organizado y conectado.
 
 ---
 
+## Ingeniería de Redes
+
+### [[ingenieria-redes/fundamentos/index\|Fundamentos]]
+[[ingenieria-redes/fundamentos/Arquitectura-Internet\|Arquitectura Internet]] · [[ingenieria-redes/fundamentos/Subredes-y-CIDR\|Subredes y CIDR]]
+
+### [[ingenieria-redes/enrutamiento/index\|Enrutamiento]]
+[[ingenieria-redes/enrutamiento/Sistemas-Autonomos-y-Routing\|AS y Routing]] · [[ingenieria-redes/enrutamiento/OSPF\|OSPF]] · [[ingenieria-redes/enrutamiento/BGP\|BGP]] · [[ingenieria-redes/enrutamiento/VLANs-y-Conmutacion\|VLANs]] · [[ingenieria-redes/enrutamiento/MPLS\|MPLS]]
+
+### [[ingenieria-redes/servicios/index\|Servicios]]
+[[ingenieria-redes/servicios/IPv6\|IPv6]] · [[ingenieria-redes/servicios/DHCP\|DHCP]] · [[ingenieria-redes/servicios/NAT-PAT\|NAT/PAT]] · [[ingenieria-redes/servicios/ACL\|ACL]] · [[ingenieria-redes/servicios/HSRP\|HSRP]] · [[ingenieria-redes/servicios/EtherChannel-STP\|EtherChannel/STP]]
+
+### [[ingenieria-redes/acceso/index\|Acceso]]
+[[ingenieria-redes/acceso/WLAN\|WLAN 802.11]] · [[ingenieria-redes/acceso/Acceso-Banda-Ancha\|Banda Ancha]] · [[ingenieria-redes/acceso/MANETs\|MANETs]]
+
+### [[ingenieria-redes/trafico/index\|Tráfico]]
+[[ingenieria-redes/trafico/Ingenieria-Trafico\|Ingeniería de Tráfico]] · [[ingenieria-redes/trafico/VoIP\|VoIP y T1/E1]]
+
+---
+
 ## Acceso rápido
 
 - [[sistemas-inteligentes/fuentes/teoria/index\|Fuentes SI — Teoría]]
 - [[sistemas-inteligentes/fuentes/practicas/index\|Fuentes SI — Prácticas]]
 - [[computacion-numerica/fuentes/index\|Fuentes CN]]
+- [[ingenieria-redes/practicas/Guia-Packet-Tracer\|Guía Cisco IOS / Packet Tracer]]
+- [[ingenieria-redes/fuentes/index\|Fuentes IRD]]
 - [[log\|Registro de actividad]]
