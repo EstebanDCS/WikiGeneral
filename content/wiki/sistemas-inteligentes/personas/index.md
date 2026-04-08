@@ -1,6 +1,6 @@
----
+﻿---
 title: Personas — Sistemas Inteligentes
-description: Figuras históricas de la IA mencionadas en la asignatura.
+description: "Figuras históricas de la IA mencionadas en la asignatura."
 date: 2026-04-08
 tags: [personas, historia-ia, sistemas-inteligentes]
 ---

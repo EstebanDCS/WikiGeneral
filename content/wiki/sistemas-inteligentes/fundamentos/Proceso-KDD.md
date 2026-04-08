@@ -1,6 +1,6 @@
 ﻿---
 title: Proceso KDD
-description: Pipeline de 5 fases para resolver problemas de machine learning: selección, preprocesado, transformación, minería y evaluación.
+description: "Pipeline de 5 fases para resolver problemas de machine learning: selección, preprocesado, transformación, minería y evaluación."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

@@ -1,6 +1,6 @@
----
+﻿---
 title: "Ejercicio — Métricas de Clasificación"
-description: Ejercicio con 4 casos reales que demuestran por qué el accuracy falla con clases desbalanceadas.
+description: "Ejercicio con 4 casos reales que demuestran por qué el accuracy falla con clases desbalanceadas."
 date: 2026-04-08
 type: source
 source_file: raw/pdfs/sistemas-inteligentes/Ejercicio_metricas.pdf

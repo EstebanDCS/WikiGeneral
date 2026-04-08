@@ -1,6 +1,6 @@
 ﻿---
 title: Preprocesado de Datos
-description: Análisis exploratorio, detección de errores, estandarización y normalización de datos.
+description: "Análisis exploratorio, detección de errores, estandarización y normalización de datos."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

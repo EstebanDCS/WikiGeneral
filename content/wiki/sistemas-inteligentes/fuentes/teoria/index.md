@@ -1,6 +1,6 @@
----
+﻿---
 title: Fuentes de Teoría — Sistemas Inteligentes
-description: PDFs y presentaciones de la asignatura. Temas 1.0–3.1 más ejercicio de métricas.
+description: "PDFs y presentaciones de la asignatura. Temas 1.0–3.1 más ejercicio de métricas."
 date: 2026-04-08
 tags: [sistemas-inteligentes, fuentes, teoria, universidad]
 ---

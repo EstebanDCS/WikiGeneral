@@ -1,6 +1,6 @@
 ﻿---
 title: Validación de Modelos
-description: Hold-out, K-fold y meta-validación. Regla de oro: nunca normalizar con datos de test.
+description: "Hold-out, K-fold y meta-validación. Regla de oro: nunca normalizar con datos de test."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

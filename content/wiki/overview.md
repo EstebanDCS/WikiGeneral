@@ -1,6 +1,6 @@
----
+﻿---
 title: Wiki Overview
-description: Estado general de la wiki y cobertura de contenidos.
+description: "Estado general de la wiki y cobertura de contenidos."
 type: overview
 date: 2026-04-08
 ---

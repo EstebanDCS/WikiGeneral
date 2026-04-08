@@ -1,6 +1,6 @@
 ﻿---
 title: Aprendizaje Automático
-description: Tipos de aprendizaje: supervisado, no supervisado y por refuerzo. Cuándo usar cada enfoque.
+description: "Tipos de aprendizaje: supervisado, no supervisado y por refuerzo. Cuándo usar cada enfoque."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

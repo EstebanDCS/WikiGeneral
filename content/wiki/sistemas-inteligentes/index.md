@@ -1,6 +1,6 @@
----
+﻿---
 title: Sistemas Inteligentes
-description: Asignatura universitaria de IA y Machine Learning. Teoría completa + 9 prácticas con dataset F1 Monaco 2023.
+description: "Asignatura universitaria de IA y Machine Learning. Teoría completa + 9 prácticas con dataset F1 Monaco 2023."
 date: 2026-04-08
 tags: [sistemas-inteligentes, universidad, machine-learning, ia]
 ---

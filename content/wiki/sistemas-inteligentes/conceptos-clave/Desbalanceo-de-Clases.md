@@ -1,6 +1,6 @@
 ﻿---
 title: Desbalanceo de Clases
-description: Por qué el accuracy engaña con clases desbalanceadas. Métricas correctas y técnicas: SMOTE, class_weight.
+description: "Por qué el accuracy engaña con clases desbalanceadas. Métricas correctas y técnicas: SMOTE, class_weight."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

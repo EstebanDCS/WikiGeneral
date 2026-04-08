@@ -1,6 +1,6 @@
 ﻿---
 title: Codificación de Datos
-description: One-Hot Encoding, discretización y conversión entre categorías y números.
+description: "One-Hot Encoding, discretización y conversión entre categorías y números."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

@@ -1,6 +1,6 @@
 ﻿---
 title: Regresión
-description: Métodos de regresión: lineal, polinómica, SVR, árboles, KNN y Bayesiano. Métricas R², MAE, RMSE.
+description: "Métodos de regresión: lineal, polinómica, SVR, árboles, KNN y Bayesiano. Métricas R², MAE, RMSE."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

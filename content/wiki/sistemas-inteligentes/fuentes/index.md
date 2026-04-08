@@ -1,6 +1,6 @@
----
+﻿---
 title: Fuentes — Sistemas Inteligentes
-description: Todos los materiales de la asignatura: PDFs de teoría y notebooks de prácticas.
+description: "Todos los materiales de la asignatura: PDFs de teoría y notebooks de prácticas."
 date: 2026-04-08
 tags: [sistemas-inteligentes, fuentes, universidad]
 ---

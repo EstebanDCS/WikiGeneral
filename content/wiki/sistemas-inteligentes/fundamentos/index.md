@@ -1,6 +1,6 @@
----
+﻿---
 title: Fundamentos — Sistemas Inteligentes
-description: Bases teóricas de IA, proceso KDD y preparación de datos.
+description: "Bases teóricas de IA, proceso KDD y preparación de datos."
 date: 2026-04-08
 tags: [sistemas-inteligentes, fundamentos, universidad]
 ---

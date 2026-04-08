@@ -1,6 +1,6 @@
 ﻿---
 title: Inteligencia Artificial
-description: Definición, historia y ramas de la IA. Desde McCarthy (1956) hasta el aprendizaje profundo.
+description: "Definición, historia y ramas de la IA. Desde McCarthy (1956) hasta el aprendizaje profundo."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

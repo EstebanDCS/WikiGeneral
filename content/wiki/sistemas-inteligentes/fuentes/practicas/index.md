@@ -1,6 +1,6 @@
----
+﻿---
 title: Fuentes de Prácticas — Sistemas Inteligentes
-description: 9 notebooks Jupyter. P2.2–P4.2 usan el dataset F1 Monaco 2023; P4.3 usa MNIST.
+description: "9 notebooks Jupyter. P2.2–P4.2 usan el dataset F1 Monaco 2023; P4.3 usa MNIST."
 date: 2026-04-08
 tags: [sistemas-inteligentes, fuentes, practicas, universidad, jupyter]
 ---

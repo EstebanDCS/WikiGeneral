@@ -1,6 +1,6 @@
----
+﻿---
 title: Conceptos Clave — Sistemas Inteligentes
-description: Problemas frecuentes en ML (overfitting, desbalanceo) y herramientas de trabajo (Python, sklearn, Keras).
+description: "Problemas frecuentes en ML (overfitting, desbalanceo) y herramientas de trabajo (Python, sklearn, Keras)."
 date: 2026-04-08
 tags: [sistemas-inteligentes, conceptos, herramientas, universidad]
 ---

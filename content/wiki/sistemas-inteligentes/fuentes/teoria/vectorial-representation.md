@@ -1,6 +1,6 @@
----
+﻿---
 title: "Representación Vectorial"
-description: Representación vectorial (pendiente de ingestión — PPTX).
+description: "Representación vectorial (pendiente de ingestión — PPTX)."
 date: 2026-04-08
 type: source
 source_file: raw/presentations/sistemas-inteligentes/Vectorial_Representation.pptx

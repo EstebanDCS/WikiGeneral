@@ -1,6 +1,6 @@
 ﻿---
 title: Overfitting y Underfitting
-description: Cómo detectar sobreajuste y subajuste con curvas de aprendizaje y cómo corregirlos.
+description: "Cómo detectar sobreajuste y subajuste con curvas de aprendizaje y cómo corregirlos."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

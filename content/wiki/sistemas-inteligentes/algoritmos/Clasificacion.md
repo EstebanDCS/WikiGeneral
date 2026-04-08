@@ -1,6 +1,6 @@
 ﻿---
 title: Clasificación
-description: Regresión logística, SVM, árboles de decisión, KNN y Naive Bayes. Métricas: Accuracy, F1, AUC-ROC.
+description: "Regresión logística, SVM, árboles de decisión, KNN y Naive Bayes. Métricas: Accuracy, F1, AUC-ROC."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

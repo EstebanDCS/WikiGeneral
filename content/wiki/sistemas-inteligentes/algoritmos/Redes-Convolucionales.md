@@ -1,6 +1,6 @@
 ﻿---
 title: Redes Convolucionales (CNN)
-description: CNN para imágenes: capas convolucionales, pooling y flatten. Caso práctico con MNIST.
+description: "CNN para imágenes: capas convolucionales, pooling y flatten. Caso práctico con MNIST."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

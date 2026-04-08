@@ -1,6 +1,6 @@
 ﻿---
 title: Visualización de Datos
-description: Tipos de variables, gráficos según objetivo y errores comunes de visualización.
+description: "Tipos de variables, gráficos según objetivo y errores comunes de visualización."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

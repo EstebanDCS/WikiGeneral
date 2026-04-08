@@ -1,6 +1,6 @@
----
+﻿---
 title: "T7 — Detección de Anomalías"
-description: Detección de anomalías (pendiente de ingestión — PPTX).
+description: "Detección de anomalías (pendiente de ingestión — PPTX)."
 date: 2026-04-08
 type: source
 source_file: raw/presentations/sistemas-inteligentes/T7_Anomalias.pptx

@@ -1,6 +1,6 @@
 ﻿---
 title: Reducción de Dimensionalidad
-description: PCA, t-SNE y LDA: cómo reducir dimensiones sin perder información relevante.
+description: "PCA, t-SNE y LDA: cómo reducir dimensiones sin perder información relevante."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

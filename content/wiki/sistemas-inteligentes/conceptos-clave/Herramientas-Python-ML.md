@@ -1,6 +1,6 @@
 ﻿---
 title: Herramientas Python para ML
-description: Referencia de código: Pandas, scikit-learn, Keras/TensorFlow, Matplotlib, Seaborn y Bokeh.
+description: "Referencia de código: Pandas, scikit-learn, Keras/TensorFlow, Matplotlib, Seaborn y Bokeh."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

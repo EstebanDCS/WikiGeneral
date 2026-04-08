@@ -1,6 +1,6 @@
----
+﻿---
 title: Algoritmos — Sistemas Inteligentes
-description: Métodos de regresión, clasificación y redes neuronales con sus métricas y cuándo usar cada uno.
+description: "Métodos de regresión, clasificación y redes neuronales con sus métricas y cuándo usar cada uno."
 date: 2026-04-08
 tags: [sistemas-inteligentes, algoritmos, machine-learning, universidad]
 ---

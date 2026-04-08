@@ -1,6 +1,6 @@
 ﻿---
 title: Redes Neuronales
-description: Arquitectura, gradient descent, Dropout, Data Augmentation, Early Stopping, mini-batches y Adam.
+description: "Arquitectura, gradient descent, Dropout, Data Augmentation, Early Stopping, mini-batches y Adam."
 date: 2026-04-08
 type: topic
 subject: Sistemas Inteligentes

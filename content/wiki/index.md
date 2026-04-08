@@ -1,6 +1,6 @@
----
+﻿---
 title: Wiki Personal
-description: Base de conocimiento personal — estudios, investigación y aprendizaje continuo.
+description: "Base de conocimiento personal — estudios, investigación y aprendizaje continuo."
 date: 2026-04-08
 tags: [home, index]
 ---
