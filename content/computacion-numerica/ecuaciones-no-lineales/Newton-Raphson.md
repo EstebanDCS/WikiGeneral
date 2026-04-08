@@ -14,15 +14,8 @@ tags: [newton-raphson, convergencia-cuadratica, secante, computacion-numerica, u
 
 Tenemos $f(x) = 0$ y una aproximación $x_0$ de la raíz $r$. En vez de trabajar con $f$, la **aproximamos por su recta tangente** en $x_0$, que es mucho más sencilla. La raíz de la tangente es la siguiente aproximación.
 
-```
-       f(x)
-        │   ╲  ← curva real
-        │    ╲
-        │     ╲  ← recta tangente en x₀
-        │      ╲
-────────┼───────●────────── eje X
-        │      x₁  x₀
-```
+> [!note] Interpretación geométrica
+> Se traza la **recta tangente** a $f$ en $x_0$. Esa recta corta al eje X en $x_1$. Se repite el proceso desde $x_1$: trazar la tangente, encontrar el corte → $x_2$, y así hasta que $|f(x_n)|$ sea suficientemente pequeño.
 
 La tangente en $x_0$ es: $y = f(x_0) + f'(x_0)(x - x_0)$.
 
