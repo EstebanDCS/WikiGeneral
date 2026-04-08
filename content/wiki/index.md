@@ -1,4 +1,4 @@
-# Wiki Index 
+# Wiki Index
 
 _Last updated: 2026-04-08 — 20 sources, 15 topics, 2 entities, 0 analyses_
 
