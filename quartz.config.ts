@@ -8,16 +8,16 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
+    pageTitle: "Wiki Personal",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
       provider: "plausible",
     },
-    locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    locale: "es-ES",
+    baseUrl: "EstebanDCS.github.io/WikiGeneral",
+    ignorePatterns: ["private", "templates", ".obsidian", "CLAUDE.md", "raw"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
