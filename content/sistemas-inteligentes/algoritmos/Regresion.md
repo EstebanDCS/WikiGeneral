@@ -23,9 +23,9 @@ Todas las métricas comparan el valor real **y** con el predicho **ŷ**:
 
 | Métrica | Fórmula | Qué mide | Rango |
 |---------|---------|---------|-------|
-| **R²** (coef. determinación) | 1 - SS_res/SS_tot | Proporción de varianza explicada | [0, 1] → 1 es perfecto |
-| **MAE** (error absoluto medio) | (1/n) Σ\|y - ŷ\| | Error medio en las mismas unidades que Y | 0 = perfecto |
-| **RMSE** (raíz error cuadrático) | √((1/n) Σ(y - ŷ)²) | Como MAE pero penaliza más los errores grandes | 0 = perfecto |
+| **R²** (coef. determinación) | $1 - \dfrac{SS_{res}}{SS_{tot}}$ | Proporción de varianza explicada | [0, 1] → 1 es perfecto |
+| **MAE** (error absoluto medio) | $\dfrac{1}{n} \sum_{i=1}^{n} \lvert y_i - \hat{y}_i \rvert$ | Error medio en las mismas unidades que Y | 0 = perfecto |
+| **RMSE** (raíz error cuadrático) | $\sqrt{\dfrac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}$ | Como MAE pero penaliza más los errores grandes | 0 = perfecto |
 
 ---
 
@@ -46,13 +46,15 @@ Un baseline es el modelo más simple posible. Si tu modelo no lo supera, algo va
 
 Predice Y como combinación lineal de las X.
 
-**Simple** (1 variable): `ŷ = β₁·x + β₀`
+**Simple** (1 variable):
+$$\hat{y} = \beta_1 x + \beta_0$$
 
-**Multivariante** (n variables): `ŷ = β₀ + β₁·x₁ + β₂·x₂ + ... + βₙ·xₙ`
+**Multivariante** (n variables):
+$$\hat{y} = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n$$
 
-Los coeficientes β se calculan por **mínimos cuadrados** (minimizar la suma de (y - ŷ)²).
+Los coeficientes $\beta$ se calculan por **mínimos cuadrados** (minimizar $\sum (y - \hat{y})^2$).
 
-**Interpretación de los coeficientes:** β₁ = cambio esperado en Y por cada unidad que aumenta x₁.
+**Interpretación de los coeficientes:** $\beta_1$ = cambio esperado en Y por cada unidad que aumenta $x_1$.
 
 | Ventajas | Desventajas |
 |----------|-------------|
@@ -64,7 +66,8 @@ Los coeficientes β se calculan por **mínimos cuadrados** (minimizar la suma de
 
 ### Regresión Polinómica
 
-Extiende la lineal añadiendo potencias de X: `ŷ = β₀ + β₁·x + β₂·x² + ... + βₙ·xⁿ`
+Extiende la lineal añadiendo potencias de X:
+$$\hat{y} = \beta_0 + \beta_1 x + \beta_2 x^2 + \cdots + \beta_n x^n$$
 
 **El problema: ¿qué grado n elegir?**
 
@@ -99,9 +102,9 @@ Adapta la SVM a regresión. El modelo acepta error de hasta ε (margen) sin pena
 
 | Kernel | Fórmula | Cuándo |
 |--------|---------|--------|
-| Lineal | K(x,z) = ⟨x,z⟩ | Datos linealmente separables |
-| Polinómico | K(x,z) = (⟨x,z⟩ + c)^d | Relaciones polinómicas |
-| RBF (Gaussian) | K(x,z) = exp(-γ‖x-z‖²) | Caso general, muy flexible |
+| Lineal | $K(x,z) = \langle x, z \rangle$ | Datos linealmente separables |
+| Polinómico | $K(x,z) = (\langle x, z \rangle + c)^d$ | Relaciones polinómicas |
+| RBF (Gaussian) | $K(x,z) = \exp(-\gamma \|x-z\|^2)$ | Caso general, muy flexible |
 
 | Ventajas | Desventajas |
 |----------|-------------|
@@ -155,9 +158,7 @@ No requiere entrenamiento. Para predecir un nuevo punto:
 En lugar de devolver un valor puntual, devuelven una **distribución de probabilidad** de Y.
 
 **Idea clave — Teorema de Bayes:**
-```
-P(Y | X) = P(X | Y) · P(Y) / P(X)
-```
+$$P(Y \mid X) = \frac{P(X \mid Y) \cdot P(Y)}{P(X)}$$
 - **Prior P(Y)**: creencia inicial sobre Y antes de ver los datos
 - **Verosimilitud P(X|Y)**: probabilidad de los datos dado Y
 - **Posterior P(Y|X)**: creencia actualizada tras ver los datos

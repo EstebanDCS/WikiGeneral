@@ -35,10 +35,9 @@ La clasificación predice una **variable categórica** (clase) a partir de una o
 
 Extiende la regresión lineal para clasificación **binaria** añadiendo una función sigmoide:
 
-```
-z = β₁·x + β₀           (combinación lineal)
-P(y=1) = 1 / (1 + e^(-z))  (sigmoide → probabilidad entre 0 y 1)
-```
+$$z = \beta_1 x + \beta_0 \quad \text{(combinación lineal)}$$
+
+$$P(y=1) = \frac{1}{1 + e^{-z}} \quad \text{(sigmoide} \to \text{probabilidad entre 0 y 1)}$$
 
 **Umbral de decisión:** si P(y=1) ≥ 0.5 → predice clase 1; si no → clase 0.
 
@@ -136,9 +135,7 @@ Para clasificar un nuevo punto:
 
 Aplica el **teorema de Bayes** asumiendo que todos los atributos son **independientes** entre sí.
 
-```
-P(Y | X₁,...,Xₙ) ∝ P(Y) · P(X₁|Y) · P(X₂|Y) · ... · P(Xₙ|Y)
-```
+$$P(Y \mid X_1, \ldots, X_n) \propto P(Y) \cdot \prod_{i=1}^{n} P(X_i \mid Y)$$
 
 **Componentes:**
 - **Prior P(Y)**: frecuencia de cada clase en train
@@ -175,10 +172,10 @@ Para clasificación binaria, toda la información cabe en una tabla 2×2:
 
 | Métrica | Fórmula | Qué mide | Cuándo usarla |
 |---------|---------|---------|--------------|
-| **Accuracy** | (TP+TN)/(TP+FP+TN+FN) | % ejemplos correctos | Clases balanceadas |
-| **Precision** | TP/(TP+FP) | De los que dije que eran positivos, ¿cuántos lo eran? | Cuando los FP son costosos (ej: spam) |
-| **Recall** | TP/(TP+FN) | De los positivos reales, ¿cuántos detecté? | Cuando los FN son costosos (ej: diagnóstico médico) |
-| **F1** | 2·(P·R)/(P+R) | Media armónica de Precision y Recall | Clases desbalanceadas |
+| **Accuracy** | $\dfrac{TP+TN}{TP+FP+TN+FN}$ | % ejemplos correctos | Clases balanceadas |
+| **Precision** | $\dfrac{TP}{TP+FP}$ | De los que predije positivos, ¿cuántos lo eran? | Cuando los FP son costosos (ej: spam) |
+| **Recall** | $\dfrac{TP}{TP+FN}$ | De los positivos reales, ¿cuántos detecté? | Cuando los FN son costosos (ej: diagnóstico médico) |
+| **F1** | $\dfrac{2 \cdot P \cdot R}{P+R}$ | Media armónica de Precision y Recall | Clases desbalanceadas |
 | **AUC-ROC** | Área bajo curva ROC | Rendimiento en todos los umbrales | Comparar modelos |
 
 **Trampa del accuracy:** si el 95% de ejemplos son clase A, un modelo que siempre predice A tiene 95% de accuracy, pero es inútil para detectar la clase B.

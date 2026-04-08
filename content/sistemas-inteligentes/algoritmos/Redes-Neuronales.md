@@ -25,7 +25,7 @@ x₂ ─┤→ [Σ w·x + b] → g(z) → salida
 x₃ ─┘
 ```
 
-Cada perceptrón calcula: `salida = g(w₁·x₁ + w₂·x₂ + ... + b)`
+Cada perceptrón calcula: $\text{salida} = g(w_1 x_1 + w_2 x_2 + \cdots + b)$
 
 Donde:
 - **w**: pesos (parámetros que se aprenden)
@@ -54,11 +54,11 @@ Sin funciones de activación no lineales, componer capas lineales sigue dando un
 
 | Función | Forma | Rango | Uso típico |
 |---------|-------|-------|-----------|
-| **Sigmoide** | 1/(1+e^(-x)) | (0, 1) | Última capa clasificación binaria |
-| **Tanh** | (eˣ-e^(-x))/(eˣ+e^(-x)) | (-1, 1) | Capas ocultas (centrada en 0) |
-| **ReLU** | max(0, x) | [0, ∞) | Capas ocultas (la más usada) |
-| **Leaky ReLU** | max(0.01x, x) | (-∞, ∞) | Capas ocultas (evita "neuronas muertas") |
-| **Softmax** | eˣᵢ/Σeˣⱼ | (0,1), suma=1 | Última capa multi-clase |
+| **Sigmoide** | $\dfrac{1}{1+e^{-x}}$ | $(0, 1)$ | Última capa clasificación binaria |
+| **Tanh** | $\dfrac{e^x - e^{-x}}{e^x + e^{-x}}$ | $(-1, 1)$ | Capas ocultas (centrada en 0) |
+| **ReLU** | $\max(0, x)$ | $[0, \infty)$ | Capas ocultas (la más usada) |
+| **Leaky ReLU** | $\max(0.01x,\; x)$ | $(-\infty, \infty)$ | Capas ocultas (evita "neuronas muertas") |
+| **Softmax** | $\dfrac{e^{x_i}}{\sum_j e^{x_j}}$ | $(0,1)$, suma=1 | Última capa multi-clase |
 
 ### Función de activación según tipo de problema
 
