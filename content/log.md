@@ -1,5 +1,12 @@
 # Activity Log
 
+## [2026-04-08] ingest | Computación Numérica — Temas 1–5 y hojas de problemas
+- Sources: 5 PDFs de teoría + 5 PDFs de problemas (Prof. Alejandro Buendía, Univ. Oviedo)
+- Archivos movidos a: raw/pdfs/computacion-numerica/ y raw/pdfs/computacion-numerica/problemas/
+- Estructura creada: computacion-numerica/{fundamentos, ecuaciones-no-lineales, sistemas-lineales, interpolacion, integracion, fuentes}
+- Topic pages creadas: Aritmetica-Finita-y-Error, Biseccion-y-Regula-Falsi, Punto-Fijo, Newton-Raphson, Ecuaciones-Algebraicas, Metodos-Directos-Sistemas, Metodos-Iterativos-Sistemas, Sistemas-No-Lineales, Interpolacion-Polinomial, Ajuste-de-Datos, Integracion-Numerica
+- Key takeaways: La asignatura cubre los 5 grandes bloques de métodos numéricos. Newton-Raphson (orden 2) es el método estrella para ecuaciones no lineales. Gauss con pivoteo para sistemas lineales. Cuadratura Gaussiana para integración eficiente.
+
 ## [2026-04-08] reorganize | Estructura por carpetas + optimización Quartz
 - Acción: reorganizados todos los archivos de wiki/ en subcarpetas por asignatura y sección
 - Nueva estructura: sistemas-inteligentes/{fundamentos, algoritmos, conceptos-clave, fuentes/{teoria,practicas}, personas}
