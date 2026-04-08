@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ':*)",
+      "Bash(py -3 -c \"import pdfplumber; print\\('ok'\\)\")",
+      "Bash(python3 -c \"import pdfplumber; print\\('ok'\\)\")",
+      "Bash(where py:*)",
+      "Bash(where python3:*)",
+      "Bash(where python:*)",
+      "Bash(py --version)",
+      "Bash(powershell:*)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(where pdftotext:*)",
+      "Bash(where mutool:*)",
+      "Bash(pdftotext \"1.0_Introducción.pdf\" -)",
+      "Bash(mkdir -p \"C:\\\\Users\\\\patif\\\\Documents\\\\Obsidian\\\\General\\\\General\\\\raw\\\\notes\\\\sistemas-inteligentes\" \"C:\\\\Users\\\\patif\\\\Documents\\\\Obsidian\\\\General\\\\General\\\\raw\\\\presentations\\\\sistemas-inteligentes\")",
+      "Bash(mv \"Ejercicio métricas.pdf\" \"../pdfs/sistemas-inteligentes/Ejercicio_metricas.pdf\")",
+      "Bash(mv \"P2.1-Introducción.ipynb\" \"../notes/sistemas-inteligentes/\")",
+      "Bash(mv \"P2.2-Preprocesado.ipynb\" \"../notes/sistemas-inteligentes/\")",
+      "Bash(mv \"P2.3-Visualización.ipynb\" \"../notes/sistemas-inteligentes/\")"
+    ]
+  }
+}
