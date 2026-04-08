@@ -88,10 +88,10 @@ $$x_n = \frac{a_n \cdot f(b_n) - b_n \cdot f(a_n)}{f(b_n) - f(a_n)}$$
 
 ### Comparativa con bisección
 
-```
-Bisección:     x_n = (a_n + b_n) / 2          → punto central geométrico
-Regula Falsi:  x_n = intersección de la secante → ponderado por los valores de f
-```
+| Método | Fórmula | Criterio |
+|--------|---------|---------|
+| **Bisección** | $x_n = \dfrac{a_n + b_n}{2}$ | Punto central geométrico |
+| **Regula Falsi** | $x_n = \dfrac{a_n f(b_n) - b_n f(a_n)}{f(b_n) - f(a_n)}$ | Ponderado por los valores de $f$ |
 
 Regula Falsi es generalmente **más rápido** que bisección porque usa información sobre el valor de $f$, no solo su signo. Sin embargo, en algunos casos uno de los extremos puede "quedarse fijo" muchas iteraciones, siendo bisección más fiable en la práctica.
 

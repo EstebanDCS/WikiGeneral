@@ -84,19 +84,16 @@ Sin funciones de activación no lineales, componer capas lineales sigue dando un
 
 El proceso de entrenamiento repite:
 
-```
-1. FORWARD: pasar los datos por la red → obtener predicciones
-2. LOSS: calcular el error (ej: MSE entre predicciones y valores reales)
-3. BACKWARD: calcular el gradiente de la loss respecto a cada peso
-4. UPDATE: ajustar los pesos en la dirección contraria al gradiente
-           w = w - α · ∇L(w)   (α = learning rate)
+1. **FORWARD:** pasar los datos por la red → obtener predicciones
+2. **LOSS:** calcular el error (ej: MSE entre predicciones y valores reales)
+3. **BACKWARD:** calcular el gradiente de la loss respecto a cada peso
+4. **UPDATE:** ajustar los pesos en la dirección contraria al gradiente: $$w \leftarrow w - \alpha \cdot \nabla L(w)$$
 5. Repetir hasta convergencia
-```
 
-**Learning rate (α):**
+**Learning rate ($\alpha$):**
 - Muy alto → los pesos "saltan" y no converge
 - Muy bajo → converge muy lentamente
-- Técnica: reducir α gradualmente conforme avanza el entrenamiento: `α = α₀ / (1 + decay·epoch)`
+- Técnica: reducir $\alpha$ gradualmente: $\alpha = \alpha_0 / (1 + \text{decay} \cdot \text{epoch})$
 
 ---
 

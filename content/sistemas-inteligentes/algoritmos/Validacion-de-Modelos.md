@@ -120,16 +120,12 @@ Si usas TEST para tomar decisiones, estás indirectamente ajustando el modelo a 
 
 Cuando se normaliza/estandariza, los parámetros (media, desviación, mín, máx) se deben calcular **solo con TRAIN** y luego aplicar ese mismo escalado a TEST.
 
-**Correcto:**
-```
-TRAIN → calcular μ y σ → normalizar TRAIN con (μ_train, σ_train)
-TEST  →                 → normalizar TEST  con (μ_train, σ_train)  ← mismos parámetros
-```
+**Correcto:** calcular $\mu$ y $\sigma$ **solo con TRAIN**, aplicar ese mismo escalado a TEST:
 
-**Incorrecto:**
-```
-TEST → calcular μ y σ propios → normalizar TEST  ← DATA LEAKAGE
-```
+> TRAIN → calcular $\mu_\text{train}$, $\sigma_\text{train}$ → normalizar TRAIN  
+> TEST → normalizar con $\mu_\text{train}$, $\sigma_\text{train}$ ← **mismos parámetros**
+
+**Incorrecto (Data Leakage):** calcular $\mu$ y $\sigma$ propios de TEST para normalizarlo.
 
 **Por qué:** en producción no conocemos los datos futuros. Si normalizamos TEST con sus propios parámetros, estamos usando información del futuro que en la práctica no tendríamos.
 

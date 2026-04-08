@@ -146,7 +146,7 @@ $$P(Y \mid X_1, \ldots, X_n) \propto P(Y) \cdot \prod_{i=1}^{n} P(X_i \mid Y)$$
 
 **Ejemplo:** predecir si un estudiante aprueba dados las horas de estudio:
 - P(aprueba) = 3/5 = 0.6
-- P(3h | aprueba) = densidad gaussiana con μ=4.4, σ=0.7 → 0.08
+- $P(\text{3h} \mid \text{aprueba})$ = densidad gaussiana con $\mu=4.4,\ \sigma=0.7$ → 0.08
 - P(aprueba | 3h de estudio) → normalizar → 14%
 
 | Ventajas | Desventajas |
@@ -197,7 +197,7 @@ La curva ROC enfrenta la **Tasa de Verdaderos Positivos (TPR)** vs la **Tasa de 
 | Método | Cómo | Modelos necesarios |
 |--------|------|-------------------|
 | **One-vs-All (OvA)** | Un modelo por clase: "¿es esta clase o no?" → gana la de mayor probabilidad | n modelos |
-| **One-vs-One (OvO)** | Un modelo por par de clases → votación | n·(n-1)/2 modelos |
+| **One-vs-One (OvO)** | Un modelo por par de clases → votación | $n(n-1)/2$ modelos |
 
 Árboles de decisión, KNN y Naive Bayes soportan multi-clase de forma nativa.
 

@@ -143,7 +143,7 @@ No requiere entrenamiento. Para predecir un nuevo punto:
 **Cómo elegir K:**
 - K pequeño → muy sensible al ruido (overfitting)
 - K grande → predicciones muy suavizadas (underfitting)
-- Regla general: K ≈ √n (aunque hay que validarlo)
+- Regla general: $K \approx \sqrt{n}$ (aunque hay que validarlo)
 
 | Ventajas | Desventajas |
 |----------|-------------|
