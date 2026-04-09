@@ -15,7 +15,6 @@ tags: [google-cloud, gcp, cloud-functions, cloud-run, serverless, pubsub, nodejs
 **Cloud Run Functions** (anteriormente Cloud Functions) es la plataforma **serverless** de Google Cloud para ejecutar código en respuesta a eventos. No hay que aprovisionar ni gestionar servidores: el código escala automáticamente desde 0 hasta miles de instancias.
 
 <svg viewBox="0 0 500 130" width="500" height="130" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Trigger box -->
   <defs>
     <marker id="crf1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
       <path d="M0,0 L6,3 L0,6 Z" fill="currentColor"/>
@@ -194,7 +193,6 @@ Las funciones de 2a generacion corren sobre **Cloud Run** internamente. Esto da:
 ## Integracion con Pub/Sub
 
 <svg viewBox="0 0 500 100" width="500" height="100" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Publisher box -->
   <defs>
     <marker id="ps1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
       <path d="M0,0 L6,3 L0,6 Z" fill="currentColor"/>
