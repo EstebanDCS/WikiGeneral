@@ -32,7 +32,6 @@ Ejemplos reales de fallos:
 | **Fallo (Failure)** | Diferencia entre el comportamiento esperado y el observado en ejecución |
 
 <svg viewBox="0 0 500 80" width="500" height="80" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Error box -->
   <rect x="10" y="20" width="90" height="36" rx="5" fill="#c0582a" opacity="0.5"/>
   <text x="55" y="35" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Error</text>
   <text x="55" y="49" font-size="9" fill="currentColor" text-anchor="middle">(humano)</text>
@@ -74,7 +73,6 @@ Las **pruebas dinámicas** son el foco principal de la asignatura.
 ## Proceso de pruebas dinámicas
 
 <svg viewBox="0 0 520 130" width="520" height="130" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Row 1: horizontal flow -->
   <rect x="10" y="10" width="100" height="40" rx="5" fill="#4a7fa5" opacity="0.4"/>
   <text x="60" y="26" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Test Basis</text>
   <text x="60" y="40" font-size="8" fill="currentColor" text-anchor="middle">(especificación)</text>
@@ -86,9 +84,7 @@ Las **pruebas dinámicas** son el foco principal de la asignatura.
   <rect x="284" y="10" width="110" height="40" rx="5" fill="#4a7fa5" opacity="0.4"/>
   <text x="339" y="26" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Casos de Prueba</text>
   <text x="339" y="40" font-size="8" fill="currentColor" text-anchor="middle">entradas + esperado</text>
-  <!-- Arrow down -->
   <line x1="339" y1="50" x2="339" y2="68" stroke="currentColor" stroke-width="1.5" marker-end="url(#a1)"/>
-  <!-- Row 2 -->
   <rect x="284" y="70" width="110" height="30" rx="5" fill="#c0582a" opacity="0.4"/>
   <text x="339" y="90" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Ejecución</text>
   <line x1="284" y1="85" x2="259" y2="85" stroke="currentColor" stroke-width="1.5" marker-end="url(#a1)"/>
@@ -169,7 +165,6 @@ Divide los dominios de entrada en **clases de equivalencia**: conjuntos de valor
 ## Modelo en V — Niveles y tipos de prueba
 
 <svg viewBox="0 0 520 180" width="520" height="180" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Left side: development -->
   <rect x="10" y="10" width="140" height="32" rx="4" fill="#4a7fa5" opacity="0.5"/>
   <text x="80" y="30" font-size="10" fill="currentColor" text-anchor="middle">Requisitos de usuario</text>
   <rect x="30" y="55" width="120" height="32" rx="4" fill="#4a7fa5" opacity="0.4"/>
@@ -178,7 +173,6 @@ Divide los dominios de entrada en **clases de equivalencia**: conjuntos de valor
   <text x="100" y="120" font-size="10" fill="currentColor" text-anchor="middle">Diseño técnico</text>
   <rect x="70" y="145" width="80" height="32" rx="4" fill="#4a7fa5" opacity="0.25"/>
   <text x="110" y="165" font-size="10" fill="currentColor" text-anchor="middle">Código fuente</text>
-  <!-- Right side: testing -->
   <rect x="370" y="10" width="140" height="32" rx="4" fill="#c0582a" opacity="0.5"/>
   <text x="440" y="30" font-size="10" fill="currentColor" text-anchor="middle">Pruebas de Aceptación</text>
   <rect x="370" y="55" width="120" height="32" rx="4" fill="#c0582a" opacity="0.4"/>
@@ -187,16 +181,13 @@ Divide los dominios de entrada en **clases de equivalencia**: conjuntos de valor
   <text x="420" y="120" font-size="10" fill="currentColor" text-anchor="middle">Pruebas Integración</text>
   <rect x="370" y="145" width="80" height="32" rx="4" fill="#c0582a" opacity="0.3"/>
   <text x="410" y="165" font-size="10" fill="currentColor" text-anchor="middle">Pruebas Unitarias</text>
-  <!-- V connections -->
   <line x1="150" y1="26" x2="180" y2="161" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3,2"/>
   <line x1="150" y1="71" x2="175" y2="161" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
   <line x1="150" y1="116" x2="172" y2="161" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.4"/>
   <line x1="370" y1="26" x2="340" y2="161" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3,2"/>
   <line x1="370" y1="71" x2="345" y2="161" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
   <line x1="370" y1="116" x2="348" y2="161" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.4"/>
-  <!-- Bottom V tip label -->
   <text x="260" y="168" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">↑ implementación</text>
-  <!-- Horizontal verify arrows -->
   <line x1="150" y1="26" x2="370" y2="26" stroke="#5ba85e" stroke-width="1.5" stroke-dasharray="5,3"/>
   <line x1="150" y1="71" x2="370" y2="71" stroke="#5ba85e" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.7"/>
   <line x1="150" y1="116" x2="370" y2="116" stroke="#5ba85e" stroke-width="1" stroke-dasharray="5,3" opacity="0.5"/>

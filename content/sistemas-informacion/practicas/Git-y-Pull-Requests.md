@@ -15,27 +15,21 @@ tags: [git, github, pull-request, revision, codigo, sistemas-informacion, univer
 En el proyecto de SI cada Historia de Usuario (HU) se desarrolla en una **rama separada** (branch). Cuando la HU está lista, se abre un **Pull Request (PR)** para que un compañero revise el código antes de fusionarlo con `main`/`master`.
 
 <svg viewBox="0 0 500 100" width="500" height="100" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- main branch line -->
   <line x1="30" y1="35" x2="470" y2="35" stroke="#4a7fa5" stroke-width="2.5"/>
   <text x="14" y="39" font-size="9" fill="#4a7fa5" font-weight="bold">main</text>
-  <!-- commits on main -->
   <circle cx="80" cy="35" r="5" fill="#4a7fa5"/>
   <circle cx="430" cy="35" r="5" fill="#5ba85e"/>
   <text x="416" y="26" font-size="8" fill="#5ba85e">merge</text>
   <text x="453" y="39" font-size="8" fill="currentColor" opacity="0.6">→ prod</text>
-  <!-- feature branch -->
   <line x1="80" y1="35" x2="130" y2="72" stroke="#c0582a" stroke-width="1.8"/>
   <line x1="130" y1="72" x2="360" y2="72" stroke="#c0582a" stroke-width="1.8"/>
   <line x1="360" y1="72" x2="430" y2="35" stroke="#c0582a" stroke-width="1.8"/>
-  <!-- commits on feature -->
   <circle cx="170" cy="72" r="4" fill="#c0582a"/>
   <circle cx="240" cy="72" r="4" fill="#c0582a"/>
   <circle cx="310" cy="72" r="4" fill="#c0582a"/>
   <text x="115" y="90" font-size="8" fill="#c0582a">rama-HU-001</text>
-  <!-- PR badge -->
   <rect x="340" y="56" width="36" height="18" rx="4" fill="#c0582a" opacity="0.8"/>
   <text x="358" y="69" font-size="8" fill="white" text-anchor="middle" font-weight="bold">PR</text>
-  <!-- review label -->
   <text x="358" y="52" font-size="7" fill="currentColor" text-anchor="middle" opacity="0.7">revisión</text>
 </svg>
 
