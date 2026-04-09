@@ -1,5 +1,13 @@
 # Activity Log
 
+## [2026-04-09] ingest | Google Cloud Skills Boost — 8 laboratorios
+- Sources: 8 transcripts de laboratorios (GSP074, GSP190, GSP080, GSP081, GSP089, GSP090, GSP091, GSP068) — Google Cloud Skills Boost Challenge
+- Contenido no universitario — subject: Google Cloud
+- Estructura creada: google-cloud/{almacenamiento, iam, funciones, monitoreo, app-engine}
+- Topic pages creadas: Cloud-Storage, IAM-Roles-Personalizados, Cloud-Run-Functions, Cloud-Monitoring, Metricas-Basadas-en-Logs, App-Engine-Java
+- GSP080+GSP081 consolidados en una página (CLI vs Consola del mismo servicio); GSP089+GSP090 en Cloud-Monitoring
+- Key takeaways: GCP tiene tres capas de serverless (Functions→Run→App Engine) con distintos trade-offs. IAM usa permisos `<servicio>.<recurso>.<verbo>` con roles personalizados con ciclo de vida ALPHA→GA→DISABLED. Cloud Monitoring puede agregar métricas multi-proyecto con Metrics Scope. Las métricas basadas en logs evitan instrumentar código.
+
 ## [2026-04-09] ingest | Sistemas de Información — Asignatura completa
 - Sources: 8 PDFs de teoría + 3 PDFs de prácticas (Profs. Claudio de la Riva, Javier Tuya, Raquel Blanco, Rubén Zurita — Univ. Oviedo)
 - Archivos organizados en: raw/pdfs/sistemas-informacion/ y raw/pdfs/sistemas-informacion/practicas/

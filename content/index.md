@@ -19,6 +19,7 @@ Base de conocimiento personal. Todo lo que aprendo, organizado y conectado.
 | [[computacion-numerica/index\|Computación Numérica]] | ✅ Completo | 10 temas · 5 PDFs · 5 prob. |
 | [[ingenieria-redes/index\|Ingeniería de Redes]] | ✅ Completo | 17 temas · 14 PDFs teoría · 10 prácticas |
 | [[sistemas-informacion/index\|Sistemas de Información]] | ✅ Completo | 6 temas · 8 PDFs teoría · 3 prácticas |
+| [[google-cloud/index\|Google Cloud Platform]] | ✅ Completo | 6 temas · 8 labs completados |
 
 ---
 
@@ -86,6 +87,13 @@ Base de conocimiento personal. Todo lo que aprendo, organizado y conectado.
 
 ### [[sistemas-informacion/practicas/index\|Prácticas]]
 [[sistemas-informacion/practicas/Git-y-Pull-Requests\|Git y Pull Requests]]
+
+---
+
+## Google Cloud
+
+### [[google-cloud/index|Google Cloud Platform]]
+[[google-cloud/almacenamiento/Cloud-Storage|Cloud Storage]] · [[google-cloud/iam/IAM-Roles-Personalizados|IAM Roles Personalizados]] · [[google-cloud/funciones/Cloud-Run-Functions|Cloud Run Functions]] · [[google-cloud/monitoreo/Cloud-Monitoring|Cloud Monitoring]] · [[google-cloud/monitoreo/Metricas-Basadas-en-Logs|Métricas Basadas en Logs]] · [[google-cloud/app-engine/App-Engine-Java|App Engine Java]]
 
 ---
 
