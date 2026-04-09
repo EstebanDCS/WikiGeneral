@@ -54,7 +54,3 @@ Calcular $\int_a^b f(x)\,dx$ cuando no existe primitiva cerrada.
 - [[fuentes/index|Fuentes]] — 5 temas PDF + 5 hojas de problemas
 
 ---
-
-## Personas
-
-- [[Alejandro-Buendia]] — Profesor de la asignatura, Dpto. Matemáticas, Universidad de Oviedo
