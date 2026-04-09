@@ -15,16 +15,13 @@ tags: [google-cloud, gcp, cloud-storage, buckets, acl, cli, personal, lab]
 Cloud Storage es el servicio de almacenamiento de **objetos** de Google Cloud. A diferencia de un sistema de ficheros, los datos se organizan en **buckets** (cubos) que contienen **objetos** (ficheros + metadatos). Es global, duradero (99.999999999% — 11 nueves) y se integra con prácticamente todos los servicios de GCP.
 
 <svg viewBox="0 0 500 130" width="500" height="130" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- GCP Project box -->
   <rect x="10" y="10" width="480" height="110" rx="8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.4"/>
   <text x="25" y="28" font-size="9" fill="currentColor" opacity="0.6">Proyecto GCP</text>
-  <!-- Bucket -->
   <rect x="40" y="40" width="120" height="65" rx="6" fill="#4a7fa5" opacity="0.25"/>
   <text x="100" y="60" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Bucket</text>
   <text x="100" y="73" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">nombre único global</text>
   <text x="100" y="84" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">región / multi-región</text>
   <text x="100" y="95" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">clase de almacenamiento</text>
-  <!-- Objects inside bucket -->
   <rect x="200" y="40" width="260" height="65" rx="6" fill="#5ba85e" opacity="0.15"/>
   <text x="330" y="58" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Objetos</text>
   <rect x="215" y="65" width="70" height="26" rx="3" fill="#5ba85e" opacity="0.4"/>
@@ -33,7 +30,6 @@ Cloud Storage es el servicio de almacenamiento de **objetos** de Google Cloud. A
   <text x="330" y="82" font-size="9" fill="currentColor" text-anchor="middle">datos.csv</text>
   <rect x="375" y="65" width="70" height="26" rx="3" fill="#5ba85e" opacity="0.4"/>
   <text x="410" y="82" font-size="9" fill="currentColor" text-anchor="middle">modelo.pkl</text>
-  <!-- Arrow from bucket to objects -->
   <line x1="160" y1="72" x2="198" y2="72" stroke="currentColor" stroke-width="1.5" marker-end="url(#acs)"/>
   <defs>
     <marker id="acs" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">

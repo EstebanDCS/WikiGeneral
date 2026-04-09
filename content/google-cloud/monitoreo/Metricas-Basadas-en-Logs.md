@@ -15,28 +15,21 @@ tags: [google-cloud, gcp, logging, log-based-metrics, alertas, gke, observabilid
 Las **métricas basadas en logs** (log-based metrics) permiten crear métricas de Cloud Monitoring a partir de **entradas de log** en Cloud Logging. En lugar de instrumentar el código para emitir una métrica, se define un **filtro sobre los logs** y Cloud Monitoring genera automáticamente la serie temporal.
 
 <svg viewBox="0 0 500 110" width="500" height="110" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Logs input -->
   <rect x="10" y="25" width="110" height="60" rx="6" fill="#4a7fa5" opacity="0.25"/>
   <text x="65" y="48" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Cloud Logging</text>
   <text x="65" y="61" font-size="8" fill="currentColor" text-anchor="middle">Entradas de log</text>
   <text x="65" y="72" font-size="8" fill="currentColor" text-anchor="middle">de cualquier servicio</text>
-  <!-- Arrow -->
   <line x1="120" y1="55" x2="155" y2="55" stroke="currentColor" stroke-width="1.5" marker-end="url(#lbm1)"/>
-  <!-- Filter -->
   <rect x="158" y="25" width="110" height="60" rx="6" fill="#c0582a" opacity="0.25"/>
   <text x="213" y="48" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Filtro de logs</text>
   <text x="213" y="61" font-size="8" fill="currentColor" text-anchor="middle">severity=ERROR</text>
   <text x="213" y="72" font-size="8" fill="currentColor" text-anchor="middle">textPayload~"timeout"</text>
-  <!-- Arrow -->
   <line x1="268" y1="55" x2="303" y2="55" stroke="currentColor" stroke-width="1.5" marker-end="url(#lbm1)"/>
-  <!-- Metric -->
   <rect x="306" y="25" width="100" height="60" rx="6" fill="#5ba85e" opacity="0.25"/>
   <text x="356" y="45" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Métrica</text>
   <text x="356" y="58" font-size="8" fill="currentColor" text-anchor="middle">Serie temporal</text>
   <text x="356" y="69" font-size="8" fill="currentColor" text-anchor="middle">en Monitoring</text>
-  <!-- Arrow -->
   <line x1="406" y1="55" x2="441" y2="55" stroke="currentColor" stroke-width="1.5" marker-end="url(#lbm1)"/>
-  <!-- Alert -->
   <rect x="444" y="30" width="48" height="50" rx="5" fill="#888" opacity="0.25"/>
   <text x="468" y="50" font-size="8" fill="currentColor" text-anchor="middle">Alerta</text>
   <text x="468" y="62" font-size="8" fill="currentColor" text-anchor="middle">/ Dashboard</text>

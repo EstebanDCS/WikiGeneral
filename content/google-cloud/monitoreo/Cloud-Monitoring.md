@@ -15,7 +15,6 @@ tags: [google-cloud, gcp, monitoring, alertas, dashboards, uptime, observabilida
 **Cloud Monitoring** (parte de Google Cloud Observability) proporciona visibilidad sobre el rendimiento, disponibilidad y salud de las aplicaciones e infraestructura en Google Cloud, en otras nubes y on-premise.
 
 <svg viewBox="0 0 500 140" width="500" height="140" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Data sources -->
   <rect x="10" y="15" width="110" height="110" rx="6" fill="#4a7fa5" opacity="0.15"/>
   <text x="65" y="33" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Fuentes de datos</text>
   <rect x="20" y="40" width="90" height="18" rx="3" fill="#4a7fa5" opacity="0.35"/>
@@ -26,9 +25,7 @@ tags: [google-cloud, gcp, monitoring, alertas, dashboards, uptime, observabilida
   <text x="65" y="99" font-size="8" fill="currentColor" text-anchor="middle">Servicios gestionados</text>
   <rect x="20" y="109" width="90" height="10" rx="3" fill="#4a7fa5" opacity="0.35"/>
   <text x="65" y="118" font-size="7" fill="currentColor" text-anchor="middle">Apps on-premise / AWS</text>
-  <!-- Arrow -->
   <line x1="120" y1="70" x2="155" y2="70" stroke="currentColor" stroke-width="1.5" marker-end="url(#cm1)"/>
-  <!-- Cloud Monitoring core -->
   <rect x="158" y="20" width="150" height="100" rx="6" fill="#c0582a" opacity="0.2"/>
   <text x="233" y="42" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Cloud Monitoring</text>
   <text x="233" y="57" font-size="8" fill="currentColor" text-anchor="middle">Métricas + Series temporales</text>
@@ -36,9 +33,7 @@ tags: [google-cloud, gcp, monitoring, alertas, dashboards, uptime, observabilida
   <text x="233" y="83" font-size="8" fill="currentColor" text-anchor="middle">Uptime Checks</text>
   <text x="233" y="96" font-size="8" fill="currentColor" text-anchor="middle">Políticas de alertas</text>
   <text x="233" y="109" font-size="8" fill="currentColor" text-anchor="middle">Grupos de monitoreo</text>
-  <!-- Arrow -->
   <line x1="308" y1="70" x2="343" y2="70" stroke="currentColor" stroke-width="1.5" marker-end="url(#cm1)"/>
-  <!-- Outputs -->
   <rect x="346" y="20" width="140" height="100" rx="6" fill="#5ba85e" opacity="0.15"/>
   <text x="416" y="42" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Notificaciones</text>
   <rect x="356" y="50" width="120" height="16" rx="3" fill="#5ba85e" opacity="0.3"/>
@@ -114,18 +109,15 @@ Ejemplo: CPU de una VM > 80% durante más de 5 minutos → enviar email
 Por defecto, un proyecto solo ve sus propias métricas. Con **Metrics Scope** se pueden agregar métricas de múltiples proyectos en un único panel de monitoreo.
 
 <svg viewBox="0 0 500 120" width="500" height="120" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Scoping project -->
   <rect x="160" y="10" width="180" height="50" rx="6" fill="#4a7fa5" opacity="0.35"/>
   <text x="250" y="30" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Proyecto de monitoreo</text>
   <text x="250" y="45" font-size="8" fill="currentColor" text-anchor="middle">(scoping project)</text>
-  <!-- Monitored projects -->
   <rect x="10" y="80" width="130" height="35" rx="5" fill="#5ba85e" opacity="0.3"/>
   <text x="75" y="102" font-size="9" fill="currentColor" text-anchor="middle">Proyecto A</text>
   <rect x="185" y="80" width="130" height="35" rx="5" fill="#5ba85e" opacity="0.3"/>
   <text x="250" y="102" font-size="9" fill="currentColor" text-anchor="middle">Proyecto B</text>
   <rect x="360" y="80" width="130" height="35" rx="5" fill="#5ba85e" opacity="0.3"/>
   <text x="425" y="102" font-size="9" fill="currentColor" text-anchor="middle">Proyecto C</text>
-  <!-- Arrows up -->
   <line x1="75" y1="80" x2="200" y2="60" stroke="currentColor" stroke-width="1.5" marker-end="url(#mp1)"/>
   <line x1="250" y1="80" x2="250" y2="60" stroke="currentColor" stroke-width="1.5" marker-end="url(#mp1)"/>
   <line x1="425" y1="80" x2="300" y2="60" stroke="currentColor" stroke-width="1.5" marker-end="url(#mp1)"/>

@@ -15,24 +15,19 @@ tags: [google-cloud, gcp, app-engine, java, serverless, despliegue, personal, la
 **App Engine** es la plataforma **PaaS** (Platform as a Service) de Google Cloud para desplegar aplicaciones web sin gestionar infraestructura. El desarrollador sube el código; Google gestiona el hardware, el SO, el escalado y la disponibilidad.
 
 <svg viewBox="0 0 500 120" width="500" height="120" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Developer -->
   <rect x="10" y="30" width="90" height="60" rx="6" fill="#4a7fa5" opacity="0.3"/>
   <text x="55" y="56" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Desarrollador</text>
   <text x="55" y="70" font-size="8" fill="currentColor" text-anchor="middle">código + config</text>
   <text x="55" y="81" font-size="8" fill="currentColor" text-anchor="middle">app.yaml</text>
-  <!-- Arrow -->
   <line x1="100" y1="60" x2="135" y2="60" stroke="currentColor" stroke-width="1.5" marker-end="url(#ae1)"/>
   <text x="117" y="53" font-size="8" fill="currentColor" text-anchor="middle">deploy</text>
-  <!-- App Engine -->
   <rect x="138" y="15" width="180" height="90" rx="6" fill="#c0582a" opacity="0.2"/>
   <text x="228" y="38" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">App Engine</text>
   <text x="228" y="52" font-size="8" fill="currentColor" text-anchor="middle">Entorno de ejecución Java</text>
   <text x="228" y="64" font-size="8" fill="currentColor" text-anchor="middle">Escalado automático</text>
   <text x="228" y="76" font-size="8" fill="currentColor" text-anchor="middle">Load balancing integrado</text>
   <text x="228" y="88" font-size="8" fill="currentColor" text-anchor="middle">HTTPS automático</text>
-  <!-- Arrow -->
   <line x1="318" y1="60" x2="353" y2="60" stroke="currentColor" stroke-width="1.5" marker-end="url(#ae1)"/>
-  <!-- Traffic -->
   <rect x="356" y="30" width="130" height="60" rx="6" fill="#5ba85e" opacity="0.2"/>
   <text x="421" y="53" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Usuarios</text>
   <text x="421" y="66" font-size="8" fill="currentColor" text-anchor="middle">PROYECTO.REGION.r.appspot.com</text>
