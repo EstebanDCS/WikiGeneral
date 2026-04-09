@@ -18,6 +18,7 @@ Base de conocimiento personal. Todo lo que aprendo, organizado y conectado.
 | [[sistemas-inteligentes/index\|Sistemas Inteligentes]] | ✅ Completo | 15 temas · 20 fuentes |
 | [[computacion-numerica/index\|Computación Numérica]] | ✅ Completo | 10 temas · 5 PDFs · 5 prob. |
 | [[ingenieria-redes/index\|Ingeniería de Redes]] | ✅ Completo | 17 temas · 14 PDFs teoría · 10 prácticas |
+| [[sistemas-informacion/index\|Sistemas de Información]] | ✅ Completo | 6 temas · 8 PDFs teoría · 3 prácticas |
 
 ---
 
@@ -72,6 +73,22 @@ Base de conocimiento personal. Todo lo que aprendo, organizado y conectado.
 
 ---
 
+## Sistemas de Información
+
+### [[sistemas-informacion/metodologia/Scrum-Agile\|Metodología]]
+[[sistemas-informacion/metodologia/Scrum-Agile\|Scrum y Agile]]
+
+### [[sistemas-informacion/requisitos/index\|Requisitos]]
+[[sistemas-informacion/requisitos/Requisitos-Software\|Requisitos del Software]] · [[sistemas-informacion/requisitos/Historias-de-Usuario\|Historias de Usuario]]
+
+### [[sistemas-informacion/calidad/index\|Calidad]]
+[[sistemas-informacion/calidad/Pruebas-Software\|Pruebas del Software]] · [[sistemas-informacion/calidad/Estandares-ISO\|Estándares ISO]]
+
+### [[sistemas-informacion/practicas/index\|Prácticas]]
+[[sistemas-informacion/practicas/Git-y-Pull-Requests\|Git y Pull Requests]]
+
+---
+
 ## Acceso rápido
 
 - [[sistemas-inteligentes/fuentes/teoria/index\|Fuentes SI — Teoría]]
@@ -79,4 +96,5 @@ Base de conocimiento personal. Todo lo que aprendo, organizado y conectado.
 - [[computacion-numerica/fuentes/index\|Fuentes CN]]
 - [[ingenieria-redes/practicas/Guia-Packet-Tracer\|Guía Cisco IOS / Packet Tracer]]
 - [[ingenieria-redes/fuentes/index\|Fuentes IRD]]
+- [[sistemas-informacion/fuentes/index\|Fuentes SI]]
 - [[log\|Registro de actividad]]

@@ -1,5 +1,12 @@
 # Activity Log
 
+## [2026-04-09] ingest | Sistemas de Información — Asignatura completa
+- Sources: 8 PDFs de teoría + 3 PDFs de prácticas (Profs. Claudio de la Riva, Javier Tuya, Raquel Blanco, Rubén Zurita — Univ. Oviedo)
+- Archivos organizados en: raw/pdfs/sistemas-informacion/ y raw/pdfs/sistemas-informacion/practicas/
+- Estructura creada: sistemas-informacion/{metodologia, requisitos, calidad, practicas, fuentes}
+- Topic pages creadas: Scrum-Agile, Requisitos-Software, Historias-de-Usuario, Pruebas-Software, Estandares-ISO, Git-y-Pull-Requests
+- Key takeaways: SI gira en torno a un proyecto Scrum real (app carreras populares) con 3 sprints. Los requisitos de usuario (pliego) → HUs con criterios de aceptación → casos de prueba con clases de equivalencia → automatización JUnit. Los Pull Requests en GitHub actúan como revisión estática (prueba estática) + SCM.
+
 ## [2026-04-08] ingest | Ingeniería de Redes — Asignatura completa
 - Sources: 14 PDFs de teoría + 10+ PDFs de prácticas (Profs. Roberto García, Ángel Neira, Carlos González — Univ. Oviedo)
 - Archivos organizados en: raw/pdfs/ingenieria-redes/ y raw/pdfs/ingenieria-redes/practicas/
