@@ -32,6 +32,7 @@ Ejemplos reales de fallos:
 | **Fallo (Failure)** | Diferencia entre el comportamiento esperado y el observado en ejecución |
 
 <svg viewBox="0 0 500 80" width="500" height="80" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <!-- Error box -->
   <rect x="10" y="20" width="90" height="36" rx="5" fill="#c0582a" opacity="0.5"/>
   <text x="55" y="35" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Error</text>
   <text x="55" y="49" font-size="9" fill="currentColor" text-anchor="middle">(humano)</text>
