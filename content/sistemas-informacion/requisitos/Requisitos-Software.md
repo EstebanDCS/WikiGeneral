@@ -31,25 +31,20 @@ Los requisitos definen el **"qué"** del sistema, no el "cómo". Los errores en 
 ## Niveles de requisitos
 
 <svg viewBox="0 0 480 140" width="480" height="140" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Negocio -->
   <rect x="10" y="10" width="80" height="32" rx="4" fill="#4a7fa5" opacity="0.7"/>
   <text x="50" y="30" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Negocio</text>
   <line x1="90" y1="26" x2="115" y2="26" stroke="currentColor" stroke-width="1.5" marker-end="url(#ra)"/>
   <rect x="117" y="10" width="340" height="32" rx="4" fill="#4a7fa5" opacity="0.3"/>
   <text x="287" y="26" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Requisitos de Negocio</text>
   <text x="287" y="38" font-size="8" fill="currentColor" text-anchor="middle">objetivos de la organización</text>
-  <!-- Arrow down -->
   <line x1="50" y1="42" x2="50" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ra)"/>
-  <!-- Usuario -->
   <rect x="10" y="60" width="80" height="32" rx="4" fill="#c0582a" opacity="0.6"/>
   <text x="50" y="80" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Usuario</text>
   <line x1="90" y1="76" x2="115" y2="76" stroke="currentColor" stroke-width="1.5" marker-end="url(#ra)"/>
   <rect x="117" y="60" width="340" height="32" rx="4" fill="#c0582a" opacity="0.2"/>
   <text x="287" y="76" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Requisitos de Usuario</text>
   <text x="287" y="88" font-size="8" fill="currentColor" text-anchor="middle">qué necesitan los stakeholders (pliego, EPICs)</text>
-  <!-- Arrow down -->
   <line x1="50" y1="92" x2="50" y2="108" stroke="currentColor" stroke-width="1.5" marker-end="url(#ra)"/>
-  <!-- Sistema -->
   <rect x="10" y="110" width="80" height="22" rx="4" fill="#5ba85e" opacity="0.7"/>
   <text x="50" y="125" font-size="10" fill="white" text-anchor="middle" font-weight="bold">Sistema</text>
   <line x1="90" y1="121" x2="115" y2="121" stroke="currentColor" stroke-width="1.5" marker-end="url(#ra)"/>
@@ -117,7 +112,6 @@ Los requisitos definen el **"qué"** del sistema, no el "cómo". Los errores en 
 ## Proceso de Ingeniería de Requisitos
 
 <svg viewBox="0 0 500 90" width="500" height="90" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Boxes -->
   <rect x="10" y="20" width="95" height="32" rx="5" fill="#4a7fa5" opacity="0.5"/>
   <text x="57" y="40" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Elicitación</text>
   <line x1="105" y1="36" x2="128" y2="36" stroke="currentColor" stroke-width="1.5" marker-end="url(#pb)"/>
@@ -129,7 +123,6 @@ Los requisitos definen el **"qué"** del sistema, no el "cómo". Los errores en 
   <line x1="345" y1="36" x2="368" y2="36" stroke="currentColor" stroke-width="1.5" marker-end="url(#pb)"/>
   <rect x="370" y="20" width="100" height="32" rx="5" fill="#5ba85e" opacity="0.5"/>
   <text x="420" y="40" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Validación</text>
-  <!-- Feedback arrow back -->
   <path d="M 420,52 Q 420,72 57,72 Q 57,72 57,52" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5,3" marker-end="url(#pb)"/>
   <text x="238" y="82" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">retroalimentación</text>
   <defs>
