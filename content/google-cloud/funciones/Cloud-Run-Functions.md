@@ -57,8 +57,9 @@ tags: [google-cloud, gcp, cloud-functions, cloud-run, serverless, pubsub, nodejs
 
 ### Código de ejemplo — Node.js
 
+**`index.js`**
+
 ```javascript
-// index.js — función con trigger Pub/Sub
 const functions = require('@google-cloud/functions-framework');
 
 functions.cloudEvent('helloPubSub', cloudEvent => {
@@ -72,8 +73,9 @@ functions.cloudEvent('helloPubSub', cloudEvent => {
 });
 ```
 
+**`package.json`**
+
 ```json
-// package.json
 {
   "name": "hola-pubsub",
   "version": "1.0.0",
@@ -117,8 +119,9 @@ gcloud functions logs read helloPubSub \
 
 ### Código de ejemplo — Node.js HTTPS
 
+**`index.js`**
+
 ```javascript
-// index.js — función HTTP
 const functions = require('@google-cloud/functions-framework');
 
 functions.http('helloHttp', (req, res) => {
