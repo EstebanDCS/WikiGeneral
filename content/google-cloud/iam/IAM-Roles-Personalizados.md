@@ -23,23 +23,18 @@ Permiso      = <servicio>.<recurso>.<verbo>
 Ejemplo: `storage.buckets.create` → servicio `storage`, recurso `buckets`, verbo `create`.
 
 <svg viewBox="0 0 500 120" width="500" height="120" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- Member box -->
   <rect x="10" y="30" width="100" height="60" rx="6" fill="#4a7fa5" opacity="0.3"/>
   <text x="60" y="55" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Miembro</text>
   <text x="60" y="68" font-size="8" fill="currentColor" text-anchor="middle">user: / group:</text>
   <text x="60" y="79" font-size="8" fill="currentColor" text-anchor="middle">serviceAccount:</text>
-  <!-- Arrow -->
   <line x1="110" y1="60" x2="145" y2="60" stroke="currentColor" stroke-width="1.5" marker-end="url(#iam1)"/>
   <text x="127" y="55" font-size="8" fill="currentColor" text-anchor="middle">tiene</text>
-  <!-- Role box -->
   <rect x="148" y="30" width="100" height="60" rx="6" fill="#c0582a" opacity="0.3"/>
   <text x="198" y="55" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Rol</text>
   <text x="198" y="68" font-size="8" fill="currentColor" text-anchor="middle">predefinido</text>
   <text x="198" y="79" font-size="8" fill="currentColor" text-anchor="middle">personalizado</text>
-  <!-- Arrow -->
   <line x1="248" y1="60" x2="283" y2="60" stroke="currentColor" stroke-width="1.5" marker-end="url(#iam1)"/>
   <text x="265" y="55" font-size="8" fill="currentColor" text-anchor="middle">contiene</text>
-  <!-- Permissions box -->
   <rect x="286" y="20" width="200" height="80" rx="6" fill="#5ba85e" opacity="0.2"/>
   <text x="386" y="42" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Permisos</text>
   <text x="386" y="57" font-size="8" fill="currentColor" text-anchor="middle">storage.buckets.create</text>
@@ -87,7 +82,6 @@ Ejemplo completo: `iam.roles.create` → crear roles en IAM.
 ## Ciclo de vida de un rol personalizado
 
 <svg viewBox="0 0 500 80" width="500" height="80" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
-  <!-- States -->
   <rect x="10" y="20" width="80" height="30" rx="5" fill="#888" opacity="0.5"/>
   <text x="50" y="39" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">ALPHA</text>
   <line x1="90" y1="35" x2="118" y2="35" stroke="currentColor" stroke-width="1.5" marker-end="url(#lc1)"/>
@@ -99,7 +93,6 @@ Ejemplo completo: `iam.roles.create` → crear roles en IAM.
   <line x1="310" y1="35" x2="338" y2="35" stroke="currentColor" stroke-width="1.5" marker-end="url(#lc1)"/>
   <rect x="340" y="20" width="70" height="30" rx="5" fill="#444" opacity="0.5"/>
   <text x="375" y="39" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">deleted</text>
-  <!-- Restore arc -->
   <path d="M 375,50 Q 375,68 270,68 Q 165,68 160,50" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#lc1)"/>
   <text x="268" y="78" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.7">restaurar (7 días)</text>
   <defs>
