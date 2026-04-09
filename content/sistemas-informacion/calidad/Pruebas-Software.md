@@ -31,11 +31,31 @@ Ejemplos reales de fallos:
 | **Defecto (Bug, Fault)** | "Desperfecto" en el código que puede causar un fallo |
 | **Fallo (Failure)** | Diferencia entre el comportamiento esperado y el observado en ejecución |
 
-```
-Error (humano) → Defecto (en código) → Fallo (en ejecución)
-                                           ↓
-                                       Depuración → Corrección del defecto
-```
+<svg viewBox="0 0 500 80" width="500" height="80" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <rect x="10" y="20" width="90" height="36" rx="5" fill="#c0582a" opacity="0.5"/>
+  <text x="55" y="35" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Error</text>
+  <text x="55" y="49" font-size="9" fill="currentColor" text-anchor="middle">(humano)</text>
+  <line x1="100" y1="38" x2="128" y2="38" stroke="currentColor" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="130" y="20" width="110" height="36" rx="5" fill="#c0582a" opacity="0.4"/>
+  <text x="185" y="35" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Defecto/Bug</text>
+  <text x="185" y="49" font-size="9" fill="currentColor" text-anchor="middle">(en código)</text>
+  <line x1="240" y1="38" x2="268" y2="38" stroke="currentColor" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="270" y="20" width="100" height="36" rx="5" fill="#c0582a" opacity="0.6"/>
+  <text x="320" y="35" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Fallo</text>
+  <text x="320" y="49" font-size="9" fill="currentColor" text-anchor="middle">(en ejecución)</text>
+  <line x1="370" y1="38" x2="398" y2="38" stroke="#5ba85e" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <rect x="400" y="20" width="90" height="36" rx="5" fill="#5ba85e" opacity="0.5"/>
+  <text x="445" y="35" font-size="10" fill="currentColor" text-anchor="middle" font-weight="bold">Depuración</text>
+  <text x="445" y="49" font-size="9" fill="currentColor" text-anchor="middle">→ corrección</text>
+  <defs>
+    <marker id="arr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="currentColor"/>
+    </marker>
+    <marker id="arr2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#5ba85e"/>
+    </marker>
+  </defs>
+</svg>
 
 ---
 
@@ -52,16 +72,37 @@ Las **pruebas dinámicas** son el foco principal de la asignatura.
 
 ## Proceso de pruebas dinámicas
 
-```
-Test Basis          →  Diseño e implementación  →  Casos de Prueba
-(especificación)        de casos de prueba          (entradas + salida esperada)
-                                                        ↓
-                                                   Ejecución
-                                                        ↓
-                                              Comparación (real vs esperada)
-                                                        ↓
-                                              Reporting → Defecto → Depuración
-```
+<svg viewBox="0 0 520 130" width="520" height="130" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <!-- Row 1: horizontal flow -->
+  <rect x="10" y="10" width="100" height="40" rx="5" fill="#4a7fa5" opacity="0.4"/>
+  <text x="60" y="26" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Test Basis</text>
+  <text x="60" y="40" font-size="8" fill="currentColor" text-anchor="middle">(especificación)</text>
+  <line x1="110" y1="30" x2="135" y2="30" stroke="currentColor" stroke-width="1.5" marker-end="url(#a1)"/>
+  <rect x="137" y="10" width="120" height="40" rx="5" fill="#4a7fa5" opacity="0.4"/>
+  <text x="197" y="26" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Diseño e impl.</text>
+  <text x="197" y="40" font-size="8" fill="currentColor" text-anchor="middle">casos de prueba</text>
+  <line x1="257" y1="30" x2="282" y2="30" stroke="currentColor" stroke-width="1.5" marker-end="url(#a1)"/>
+  <rect x="284" y="10" width="110" height="40" rx="5" fill="#4a7fa5" opacity="0.4"/>
+  <text x="339" y="26" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Casos de Prueba</text>
+  <text x="339" y="40" font-size="8" fill="currentColor" text-anchor="middle">entradas + esperado</text>
+  <!-- Arrow down -->
+  <line x1="339" y1="50" x2="339" y2="68" stroke="currentColor" stroke-width="1.5" marker-end="url(#a1)"/>
+  <!-- Row 2 -->
+  <rect x="284" y="70" width="110" height="30" rx="5" fill="#c0582a" opacity="0.4"/>
+  <text x="339" y="90" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Ejecución</text>
+  <line x1="284" y1="85" x2="259" y2="85" stroke="currentColor" stroke-width="1.5" marker-end="url(#a1)"/>
+  <rect x="137" y="70" width="120" height="30" rx="5" fill="#c0582a" opacity="0.4"/>
+  <text x="197" y="90" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Comparación real vs esperado</text>
+  <line x1="137" y1="85" x2="112" y2="85" stroke="currentColor" stroke-width="1.5" marker-end="url(#a1)"/>
+  <rect x="10" y="70" width="100" height="30" rx="5" fill="#5ba85e" opacity="0.4"/>
+  <text x="60" y="82" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">Reporting</text>
+  <text x="60" y="95" font-size="8" fill="currentColor" text-anchor="middle">→ Defecto → Debug</text>
+  <defs>
+    <marker id="a1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="currentColor"/>
+    </marker>
+  </defs>
+</svg>
 
 **Caso de prueba (CP):** conjunto de {objetivo, entradas, condiciones de ejecución, salida esperada}.
 
@@ -126,12 +167,40 @@ Divide los dominios de entrada en **clases de equivalencia**: conjuntos de valor
 
 ## Modelo en V — Niveles y tipos de prueba
 
-```
-Requisitos de usuario  ←──────────────────────► Pruebas de Aceptación
-    Requisitos sistema  ←──────────────────────► Pruebas de Sistema
-        Diseño técnico  ←──────────────────────► Pruebas de Integración
-           Código fuente ←──────────────────────► Pruebas Unitarias
-```
+<svg viewBox="0 0 520 180" width="520" height="180" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;font-family:sans-serif">
+  <!-- Left side: development -->
+  <rect x="10" y="10" width="140" height="32" rx="4" fill="#4a7fa5" opacity="0.5"/>
+  <text x="80" y="30" font-size="10" fill="currentColor" text-anchor="middle">Requisitos de usuario</text>
+  <rect x="30" y="55" width="120" height="32" rx="4" fill="#4a7fa5" opacity="0.4"/>
+  <text x="90" y="75" font-size="10" fill="currentColor" text-anchor="middle">Requisitos sistema</text>
+  <rect x="50" y="100" width="100" height="32" rx="4" fill="#4a7fa5" opacity="0.3"/>
+  <text x="100" y="120" font-size="10" fill="currentColor" text-anchor="middle">Diseño técnico</text>
+  <rect x="70" y="145" width="80" height="32" rx="4" fill="#4a7fa5" opacity="0.25"/>
+  <text x="110" y="165" font-size="10" fill="currentColor" text-anchor="middle">Código fuente</text>
+  <!-- Right side: testing -->
+  <rect x="370" y="10" width="140" height="32" rx="4" fill="#c0582a" opacity="0.5"/>
+  <text x="440" y="30" font-size="10" fill="currentColor" text-anchor="middle">Pruebas de Aceptación</text>
+  <rect x="370" y="55" width="120" height="32" rx="4" fill="#c0582a" opacity="0.4"/>
+  <text x="430" y="75" font-size="10" fill="currentColor" text-anchor="middle">Pruebas de Sistema</text>
+  <rect x="370" y="100" width="100" height="32" rx="4" fill="#c0582a" opacity="0.35"/>
+  <text x="420" y="120" font-size="10" fill="currentColor" text-anchor="middle">Pruebas Integración</text>
+  <rect x="370" y="145" width="80" height="32" rx="4" fill="#c0582a" opacity="0.3"/>
+  <text x="410" y="165" font-size="10" fill="currentColor" text-anchor="middle">Pruebas Unitarias</text>
+  <!-- V connections -->
+  <line x1="150" y1="26" x2="180" y2="161" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <line x1="150" y1="71" x2="175" y2="161" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+  <line x1="150" y1="116" x2="172" y2="161" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.4"/>
+  <line x1="370" y1="26" x2="340" y2="161" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <line x1="370" y1="71" x2="345" y2="161" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+  <line x1="370" y1="116" x2="348" y2="161" stroke="currentColor" stroke-width="1" stroke-dasharray="3,2" opacity="0.4"/>
+  <!-- Bottom V tip label -->
+  <text x="260" y="168" font-size="8" fill="currentColor" text-anchor="middle" opacity="0.6">↑ implementación</text>
+  <!-- Horizontal verify arrows -->
+  <line x1="150" y1="26" x2="370" y2="26" stroke="#5ba85e" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="150" y1="71" x2="370" y2="71" stroke="#5ba85e" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.7"/>
+  <line x1="150" y1="116" x2="370" y2="116" stroke="#5ba85e" stroke-width="1" stroke-dasharray="5,3" opacity="0.5"/>
+  <line x1="150" y1="161" x2="370" y2="161" stroke="#5ba85e" stroke-width="1" stroke-dasharray="5,3" opacity="0.4"/>
+</svg>
 
 | Nivel | Objetivo | Responsable |
 |-------|----------|-------------|
