@@ -16,6 +16,11 @@ Base de conocimiento personal. Todo lo que aprendo, organizado y conectado.
 > [!tip] Examen próximo — Sistemas Inteligentes
 > [[sistemas-inteligentes/Examen-Practico-Guia|📋 Guía Examen Práctico SI]] — preprocesado, modelos y redes neuronales paso a paso
 
+> [!tip] Exámenes próximos — Computación Numérica
+> [[computacion-numerica/Examen-Parcial-1-Guia|📋 Parcial 1 CN — Temas 1–3]] — aritmética finita, ecuaciones no lineales, sistemas lineales
+> [[computacion-numerica/Examen-Parcial-2-Guia|📋 Parcial 2 CN — Temas 4–6]] — interpolación, integración, optimización (+ temas 1–3)
+> [[computacion-numerica/Examen-PL-Maxima-Guia|💻 PL Global CN — Maxima/wxMaxima]] — bisec, sistemas, Lagrange, referencia completa
+
 ---
 
 ## Asignaturas

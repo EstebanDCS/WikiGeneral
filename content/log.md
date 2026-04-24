@@ -1,5 +1,13 @@
 # Activity Log
 
+## [2026-04-24] output | Guías Examen CN — 3 páginas
+- Sources: Marzo26_1erParcial.pdf (A+B con soluciones), Tema5-Integracion.pdf, Tema6-Optimizacion.pdf, Prb_IntegraNumerica.pdf, Sesiones PL 1–8
+- Páginas creadas: [[computacion-numerica/Examen-Parcial-1-Guia]], [[computacion-numerica/Examen-Parcial-2-Guia]], [[computacion-numerica/Examen-PL-Maxima-Guia]]
+- Contenido Parcial 1: aritmética finita con errores reales (13%, 59%), bisección+Bolzano+NR, Cholesky, LU, Jacobi/Gauss-Seidel con radio espectral
+- Contenido Parcial 2: Lagrange/Newton/Chebyshev/splines, reglas Newton-Cotes simples y compuestas (O(h²)/O(h⁴)), Gauss-Legendre, sección áurea, gradiente conjugado, símplex
+- Contenido PL: ejercicios garantizados (bisec Ex1, M(n) sistemas Ex8, Lagrange Ex15), patrones de todas las sesiones, tabla de errores frecuentes
+- Acceso rápido añadido en index.md
+
 ## [2026-04-24] analysis | Guía Examen Práctico SI
 - Source: Plantilla_PL4.ipynb (examen real con loan_data.csv), P3.1, P3.2, P4.1 (notebooks actualizados)
 - Página creada: [[sistemas-inteligentes/Examen-Practico-Guia]]
