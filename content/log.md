@@ -1,5 +1,11 @@
 # Activity Log
 
+## [2026-04-24] output | Tema 6 — 9 ejercicios de optimización resueltos
+- Source: ejercicios (3).pdf — Dept. Matemáticas, Computación Numérica
+- Página creada: [[computacion-numerica/Tema6-Ejercicios-Resueltos]]
+- Contenido: Prb1-3 sección áurea (con tabla iteración por iteración), Prb4-7 máxima pendiente (con búsqueda lineal explícita), Prb8-9 símplex tabular completo
+- Incluye: soluciones analíticas de contraste, tabla de errores frecuentes, estrategias por tipo
+
 ## [2026-04-24] output | Guías Examen CN — 3 páginas
 - Sources: Marzo26_1erParcial.pdf (A+B con soluciones), Tema5-Integracion.pdf, Tema6-Optimizacion.pdf, Prb_IntegraNumerica.pdf, Sesiones PL 1–8
 - Páginas creadas: [[computacion-numerica/Examen-Parcial-1-Guia]], [[computacion-numerica/Examen-Parcial-2-Guia]], [[computacion-numerica/Examen-PL-Maxima-Guia]]
