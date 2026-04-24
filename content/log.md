@@ -6,6 +6,13 @@
 - Contenido: Prb1-3 sección áurea (con tabla iteración por iteración), Prb4-7 máxima pendiente (con búsqueda lineal explícita), Prb8-9 símplex tabular completo
 - Incluye: soluciones analíticas de contraste, tabla de errores frecuentes, estrategias por tipo
 
+## [2026-04-24] update | Guía PL Maxima — reescrita con PDF final2026.pdf
+- Source: final2026.pdf (23 ejercicios del examen global PL)
+- Página actualizada: [[computacion-numerica/Examen-PL-Maxima-Guia]]
+- Estructura nueva: 3 fijos (Ej 1, 8, 15) + 2 elegidos (Ej 2 NR + Ej 20 trapecio, páginas distintas)
+- Cada ejercicio con código completo, explicación del algoritmo, errores típicos y verificación
+- Tabla completa de los 23 ejercicios con dificultad estimada
+
 ## [2026-04-24] output | Guías Examen CN — 3 páginas
 - Sources: Marzo26_1erParcial.pdf (A+B con soluciones), Tema5-Integracion.pdf, Tema6-Optimizacion.pdf, Prb_IntegraNumerica.pdf, Sesiones PL 1–8
 - Páginas creadas: [[computacion-numerica/Examen-Parcial-1-Guia]], [[computacion-numerica/Examen-Parcial-2-Guia]], [[computacion-numerica/Examen-PL-Maxima-Guia]]
