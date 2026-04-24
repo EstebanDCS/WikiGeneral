@@ -1,5 +1,34 @@
 # Activity Log
 
+## [2026-04-24] analysis | Guía Examen Práctico SI
+- Source: Plantilla_PL4.ipynb (examen real con loan_data.csv), P3.1, P3.2, P4.1 (notebooks actualizados)
+- Página creada: [[sistemas-inteligentes/Examen-Practico-Guia]]
+- Contenido: receta completa de las 3 partes del examen — preprocesado, 5 modelos clásicos, 3 redes neuronales
+- Incluye: código copiable, tabla de errores frecuentes, referencia de imports, métricas por tipo de problema
+- Dataset del examen identificado: loan_data.csv (predicción de impago de préstamo → clasificación binaria)
+- Acceso rápido añadido en index.md
+
+## [2026-04-24] overview | Síntesis global del wiki
+- Acción: reescritura completa de `overview.md` — ahora cubre las 5 asignaturas con síntesis por dominio, tabla de estado, árbol de estructura y sección de conexiones entre asignaturas
+- Páginas actualizadas: `overview.md`
+- Añadida sección "Preguntas abiertas y gaps" con 6 elementos pendientes identificados
+
+## [2026-04-24] lint | Health check completo
+- Páginas analizadas: 105 archivos .md, 5 asignaturas
+- **Problemas encontrados y corregidos:**
+  - `Overfitting y Underfitting.md` (raíz) — archivo de 1 línea vacío referenciado por 9 páginas; convertido en stub de redirección hacia `sistemas-inteligentes/conceptos-clave/Overfitting-y-Underfitting`
+  - `ingenieria-redes/index.md` línea 18 — link roto `[[fundamentos/Modelos-TCP-IP]]` (archivo inexistente); redirigido al anchor `#modelo-tcpip-y-capas` dentro de `Arquitectura-Internet.md` donde ya está el contenido
+- **Problemas identificados, no corregidos (requieren fuentes o decisión):**
+  - ~25 wikilinks con acentos/ñ en páginas de SI teoría (`[[Regresión]]`, `[[Clasificación]]`, etc.) vs filenames con hyphens — Quartz puede resolverlos via slug normalization, monitorizar en build
+  - `[[Aprendizaje por Refuerzo]]`, `[[Clustering]]`, `[[KNN]]`, `[[SVM]]`, `[[Naive Bayes]]` — temas referenciados sin página propia en SI; candidatos a crear en próximo ingest
+  - `computacion-numerica/fuentes/index.md` — links a `[[t1-aritmetica-finita]]`…`[[t5-integracion]]` y `[[prb-compnum-0]]`…`[[prb-integracion]]` apuntan a páginas resumen de PDFs no creadas aún
+- **Páginas candidatas a crear (gaps identificados):**
+  - `sistemas-inteligentes/temas/Aprendizaje-por-Refuerzo.md` — referenciado 3 veces, sin página
+  - `sistemas-inteligentes/temas/T7-Anomalias.md` — PPTX pendiente de ingest
+  - `sistemas-inteligentes/temas/Representacion-Vectorial.md` — PPTX pendiente de ingest
+  - Páginas resumen para PDFs CN (t1–t5, prb-compnum-*)
+- **Estado general:** contenidos completos y bien estructurados; la mayoría de los "links rotos" detectados por análisis estático son en realidad correctos en Quartz (slug normalization)
+
 ## [2026-04-09] ingest | Google Cloud Skills Boost — 8 laboratorios
 - Sources: 8 transcripts de laboratorios (GSP074, GSP190, GSP080, GSP081, GSP089, GSP090, GSP091, GSP068) — Google Cloud Skills Boost Challenge
 - Contenido no universitario — subject: Google Cloud

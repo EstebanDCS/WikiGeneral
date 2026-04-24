@@ -15,7 +15,7 @@ Asignatura de 2º curso del Grado en Ingeniería Informática en Tecnologías de
 
 ## Fundamentos
 
-[[fundamentos/Arquitectura-Internet|Arquitectura de Internet]] · [[fundamentos/Modelos-TCP-IP|Modelo TCP/IP y capas]] · [[fundamentos/Subredes-y-CIDR|Subredes y CIDR]]
+[[fundamentos/Arquitectura-Internet|Arquitectura de Internet]] · [[fundamentos/Arquitectura-Internet#modelo-tcpip-y-capas|Modelo TCP/IP y capas]] · [[fundamentos/Subredes-y-CIDR|Subredes y CIDR]]
 
 ---
 

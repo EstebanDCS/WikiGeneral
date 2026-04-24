@@ -11,6 +11,13 @@ Base de conocimiento personal. Todo lo que aprendo, organizado y conectado.
 
 ---
 
+## Acceso directo examen
+
+> [!tip] Examen próximo — Sistemas Inteligentes
+> [[sistemas-inteligentes/Examen-Practico-Guia|📋 Guía Examen Práctico SI]] — preprocesado, modelos y redes neuronales paso a paso
+
+---
+
 ## Asignaturas
 
 | Asignatura | Estado | Contenido |
