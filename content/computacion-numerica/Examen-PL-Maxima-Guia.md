@@ -2,7 +2,7 @@
 title: Guía Examen PL Global — Maxima/wxMaxima
 type: output
 output_type: study-guide
-date: 2026-04-24
+date: 2026-04-28
 subject: Computación Numérica
 based_on: [final2026.pdf, Sesiones-PL-1-8]
 tags: [computacion-numerica, maxima, examen, practica, programacion]
@@ -30,10 +30,10 @@ tags: [computacion-numerica, maxima, examen, practica, programacion]
 
 ```maxima
 kill(all)$
-fpprec: 160$
+fpprec: 400$
 ```
 
-Siempre. Sin esto, `bfloat` no funciona bien y los resultados de alta precisión dan basura.
+**`fpprec: 400`**, no 160. El profesor usa 400 en sus sesiones para tener margen amplio. Con 160 técnicamente sería suficiente, pero si pones 400 nunca falla.
 
 ---
 
@@ -41,81 +41,79 @@ Siempre. Sin esto, `bfloat` no funciona bien y los resultados de alta precisión
 
 ### ¿Qué pide?
 
-Construir la función `bisec(fu, a, b, tol)` (iterativa o recursiva) que implemente bisección. Luego usarla con $f(x) = x^2 - 3$ para obtener √3 con 150 cifras decimales correctas. Verificar el resultado.
+Construir `bisec(fu, a, b, tol)` e implementar bisección. Luego usarla con $f(x) = x^2 - 3$ para obtener √3 con 150 cifras decimales. Verificar el resultado.
 
-### Por qué funciona
+### Hay dos versiones — el examen puede pedir cualquiera
 
-El método de bisección parte de un intervalo $[a,b]$ donde $f(a)$ y $f(b)$ tienen signos opuestos (garantía de Bolzano). En cada paso divide el intervalo por la mitad y se queda con la mitad donde sigue habiendo cambio de signo. El error se divide por 2 en cada iteración.
+---
 
-Para 150 dígitos decimales correctos necesitamos una tolerancia de $10^{-150}$. Con `bfloat` y `fpprec: 160` tenemos suficiente precisión.
+### Versión iterativa (con `block`)
 
-### Código completo — versión iterativa
+Esta es la versión estándar. El profesor la implementa con una función local `c(a,b)` dentro del `block`:
 
 ```maxima
 kill(all)$
-fpprec: 160$
+fpprec: 400$
 
 bisec(fu, a, b, tol) := block(
-    [c, fa, fb, fc],
-    fa: fu(a),
-    fb: fu(b),
-    /* Verificar Bolzano: debe haber cambio de signo */
-    if fa * fb > 0 then (
-        print("ERROR: f(a) y f(b) tienen el mismo signo, no hay raíz garantizada"),
-        return(false)
-    ),
-    /* Iterar: dividir el intervalo por la mitad */
-    while (b - a) / 2 > tol do (
-        c: (a + b) / 2,          /* punto medio */
-        fc: fu(c),
-        if fc = 0 then return(c), /* raíz exacta (raro pero posible) */
-        if fa * fc < 0 then (     /* la raíz está en [a, c] */
-            b: c,
-            fb: fc
-        ) else (                  /* la raíz está en [c, b] */
-            a: c,
-            fa: fc
-        )
-    ),
-    (a + b) / 2                   /* retorna el punto medio del intervalo final */
+    c(a,b) := (a+b)/2,                  /* función local para el punto medio */
+    while abs(b-a) > tol do              /* OJO: abs(b-a), no (b-a)/2 */
+        if fu(a)*fu(c(a,b)) < 0
+        then b: c(a,b)
+        else a: c(a,b),
+    c(a,b)                               /* retorna el punto medio final */
 )$
 
-/* Definir f(x) = x^2 - 3 con bfloat para alta precisión */
+/* Definir f(x) = x² - 3 */
 define(f(x), x^2 - bfloat(3))$
 
-/* Calcular √3 con 150 cifras decimales */
-/* Tolerancia: 10^(-155) para asegurar 150 dígitos correctos */
-raiz3: bisec(f, bfloat(1), bfloat(2), bfloat(10)^(-155))$
+/* Llamada: argumentos ENTEROS EXACTOS, no bfloat() */
+raiz3: bisec(f, 1, 2, 10^(-155))$
 
-/* Mostrar resultado */
-print("√3 ≈", raiz3)$
-
-/* VERIFICACIÓN: elevar al cuadrado y restar 3, debe ser ~0 */
-print("Verificación (raiz3^2 - 3):", raiz3^2 - bfloat(3))$
+print("√3 ≈", bfloat(raiz3))$
+print("Verificación (raiz²-3):", bfloat(raiz3^2 - 3))$
 ```
 
-### Código completo — versión recursiva (alternativa válida)
+> **Nota**: el resultado sale en formato fracción (p.ej. `3715.../2145...`). Es correcto — es aritmética racional exacta. Para ver el decimal usa `bfloat(raiz3)`.
+
+---
+
+### Versión recursiva (sin `block`) ⚠️
+
+**Trampa crítica**: si usas `block()` en la versión recursiva → **desbordamiento de pila** (~515 llamadas recursivas con block = crash en SBCL).
+
+La versión recursiva correcta es **puro `if-then-else`, sin `block`, sin variables locales**:
 
 ```maxima
-bisec(fu, a, b, tol) := block(
-    [c: (a + b) / 2, fc],
-    /* Caso base: intervalo suficientemente pequeño */
-    if (b - a) / 2 < tol then return(c),
-    fc: fu(c),
-    if fc = 0 then return(c),
-    /* Llamada recursiva al subintervalo correcto */
-    if fu(a) * fc < 0 then
-        bisec(fu, a, c, tol)
-    else
-        bisec(fu, c, b, tol)
-)$
+kill(all)$
+fpprec: 400$
+
+bisecR(fu, a, b, tol) :=
+    if abs(b-a) < tol
+    then (a+b)/2
+    else if fu(a)*fu((a+b)/2) < 0
+    then bisecR(fu, a, (a+b)/2, tol)
+    else bisecR(fu, (a+b)/2, b, tol)$
+
+define(f(x), x^2 - bfloat(3))$
+
+/* Argumentos enteros exactos: 1 y 2, NO bfloat(1), bfloat(2) */
+/* El profesor lo avisa explícitamente: "OJO, hay que usar números enteros o racionales" */
+raiz3: bisecR(f, 1, 2, 10^(-155))$
+
+print("√3 ≈", bfloat(raiz3))$
 ```
 
-> **Truco crítico**: los extremos del intervalo deben ser `bfloat(1)` y `bfloat(2)`, NO `1` y `2`. Si pasas enteros, Maxima hace aritmética entera y pierde la alta precisión aunque `fpprec` esté a 160.
+| | Iterativa | Recursiva |
+|---|---|---|
+| Usa `block()` | ✅ Sí | ❌ No (stack overflow) |
+| Argumentos | Enteros exactos | Enteros exactos |
+| Velocidad | Igual | Igual |
+| Resultado | Fracción exacta | Fracción exacta |
 
 ### ¿Cuántas iteraciones necesita?
 
-$$N \geq \frac{\ln(b-a) + 155 \cdot \ln(10)}{\ln 2} \approx \frac{0 + 355.7}{0.693} \approx 513 \text{ iteraciones}$$
+$$N \geq \frac{\ln(b-a) + 155 \cdot \ln(10)}{\ln 2} \approx 513 \text{ iteraciones}$$
 
 Bisección es lenta pero segura. Newton-Raphson (Ej 2) converge en ~10 iteraciones para el mismo resultado.
 
@@ -125,51 +123,42 @@ Bisección es lenta pero segura. Newton-Raphson (Ej 2) converge en ~10 iteracion
 
 ### ¿Qué pide?
 
-Programar `newton(fu, x0, tol)` siguiendo el esqueleto que da el profesor:
+Programar `Newton(fu, x0, tol)`. El profesor da el esqueleto exacto en sus apuntes:
+
 ```
-newton(fu,x0,tol) := block(define(dfu(x),diff(fu(x),x,1)), while...., x0)
+Newton(fu, x0, tol) := block(define(dfu(x), diff(fu(x),x,1)), while..., x0)
 ```
+
 Y probarlo con la misma $f(x) = x^2 - 3$ del ejercicio 1.
 
-### Por qué es fácil
-
-Es casi idéntico al Ej 1. La diferencia es que en vez de dividir el intervalo por la mitad, calculas el siguiente punto usando la fórmula:
-$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
-
-La derivada se calcula automáticamente con `diff`. Converge en ~10 iteraciones en vez de ~500.
-
-### Código completo
+### Código completo — firma exacta del profesor
 
 ```maxima
 kill(all)$
-fpprec: 160$
+fpprec: 400$
 
-newton(fu, x0, tol) := block(
-    [x: x0, xnew],
-    /* El profesor pide esta línea: define la derivada dentro del block */
-    define(dfu(t), diff(fu(t), t, 1)),
-    /* Iterar: fórmula de Newton-Raphson */
-    while true do (
-        /* Guardar contra derivada nula (dividiría entre cero) */
-        if abs(dfu(x)) < bfloat(10)^(-200) then (
-            print("Derivada nula en x =", x),
-            return(false)
-        ),
-        xnew: x - fu(x) / dfu(x),        /* fórmula NR */
-        if abs(xnew - x) < tol then return(xnew),  /* convergió */
-        x: xnew                            /* actualizar punto */
-    )
+Newton(fu, x0, tol) := block(
+    define(dfu(x), diff(fu(x), x, 1)),           /* derivada automática */
+    while abs(fu(x0)) > tol do                    /* condición: |f(x0)| > tol */
+        x0: bfloat(x0 - fu(x0)/dfu(x0)),         /* bfloat() en la ACTUALIZACIÓN */
+    x0                                             /* retorna x0 (último valor del block) */
 )$
 
-/* Misma función que en Ejercicio 1 */
+/* Misma función que en Ej 1 */
 define(f(x), x^2 - bfloat(3))$
 
-/* Calcular √3 — punto de inicio x0 = 1.5 (cerca de la raíz) */
-raiz3_nr: newton(f, bfloat(3)/2, bfloat(10)^(-155))$
+/* Punto de inicio: cualquier valor razonable cerca de la raíz */
+raiz3_nr: Newton(f, 1, 10^(-155))$
 
 print("√3 por NR:", raiz3_nr)$
-print("Verificación:", raiz3_nr^2 - bfloat(3))$
+print("Verificación:", bfloat(raiz3_nr^2 - 3))$
 ```
+
+> **Diferencias clave respecto a lo que se podría pensar**:
+> - La condición de parada es `abs(fu(x0)) > tol`, **no** `abs(xnew - x) < tol`
+> - El `bfloat()` va en la **actualización de x0**, no en los argumentos de entrada
+> - Se actualiza `x0` directamente, sin variable auxiliar `xnew`
+> - Al final del `block` se devuelve `x0` implícitamente (sin `return`)
 
 ### ¿Por qué converge tan rápido?
 
@@ -188,16 +177,11 @@ vs. bisección: 1 dígito nuevo cada ~3.3 iteraciones.
 ### Comparación directa Ej 1 vs Ej 2
 
 ```maxima
-/* Ambos hacen lo mismo: encontrar raíz de f(x)=0 */
-
-/* Bisección: garantiza convergencia si hay cambio de signo */
-raiz_b: bisec(f, bfloat(1), bfloat(2), bfloat(10)^(-155))$
-
-/* Newton-Raphson: converge más rápido si x0 está cerca de la raíz */
-raiz_n: newton(f, bfloat(3)/2, bfloat(10)^(-155))$
+raiz_b: bisecR(f, 1, 2, 10^(-155))$
+raiz_n: Newton(f, 1, 10^(-155))$
 
 /* Deben ser (prácticamente) iguales */
-print("Diferencia entre métodos:", abs(raiz_b - raiz_n))$
+print("Diferencia entre métodos:", bfloat(abs(raiz_b - raiz_n)))$
 ```
 
 ---
@@ -207,91 +191,75 @@ print("Diferencia entre métodos:", abs(raiz_b - raiz_n))$
 ### ¿Qué pide?
 
 1. Crear `M(n)`: matriz $n\times n$ con 11 en la diagonal, 1 donde $|i-j| < 3$, 0 en otro caso.
-2. Crear `b(n)`: vector columna de $n$ unos.
+2. Crear `b(n)`: vector de longitud $n$ (lista de unos, o vector columna).
 3. Resolver $M(7)\cdot X = b(7)$ de **dos maneras**:
    - Usando la **inversa**: $X = M(7)^{-1} \cdot b(7)$
    - Usando **echelon** + sustitución regresiva
-4. Indicar la suma $x_1 + x_2 + \cdots + x_7$ (número racional exacto).
+4. Indicar la suma $x_1 + x_2 + \cdots + x_7$.
 
-### Código completo
+### Código completo — estilo del profesor
 
 ```maxima
 kill(all)$
 
-/* ── Paso 1: Definir M(n) ───────────────────────────────────────── */
-M(n) := block(
-    [A],
-    A: zeromatrix(n, n),          /* empezar con todo ceros */
-    for i:1 thru n do
-        for j:1 thru n do (
-            if i = j then
-                A[i][j]: 11       /* diagonal: 11 */
-            else if abs(i - j) < 3 then
-                A[i][j]: 1        /* vecinos cercanos: 1 */
-            /* else: queda 0, ya está */
-        ),
-    A                             /* retorna la matriz */
-)$
+/* ── Definir M(n) ─────────────────────────────────────────────────── */
+/* El profesor define primero una función elemento a(n,i,j) y luego construye */
 
-/* ── Paso 2: Definir b(n) ───────────────────────────────────────── */
-b(n) := transpose(matrix(makelist(1, i, 1, n)))$
-/* b(7) es un vector columna 7×1 de unos */
+a8(i,j) := if i=j then 11
+           else if abs(i-j) < 3 then 1
+           else 0$
 
-/* ── Verificar que las definiciones son correctas ───────────────── */
+M(n) := apply('matrix, makelist(makelist(a8(i,j), j,1,n), i,1,n))$
+
+/* ── Definir b(n) ─────────────────────────────────────────────────── */
+b(n) := makelist(k*0+1, k, 1, n)$   /* lista de n unos */
+
+/* ── Verificar ────────────────────────────────────────────────────── */
 print("M(7) =")$
 print(M(7))$
-print("b(7) =")$
-print(b(7))$
+print("b(7) =", b(7))$
 
-/* ══ MÉTODO 1: por la inversa ════════════════════════════════════ */
-/* X = M(7)^{-1} · b(7)   ← usar . para producto matricial */
-X1: invert(M(7)) . b(7)$
+/* ══ MÉTODO 1: por la inversa ════════════════════════════════════════ */
+X1: invert(M(7)) . transpose(matrix(b(7)))$
 print("Solución por inversa:")$
 print(X1)$
-
-/* Suma de todas las incógnitas (número racional) */
 suma1: sum(X1[i][1], i, 1, 7)$
-print("x1 + x2 + ... + x7 =", suma1)$
+print("x1 + ... + x7 =", suma1)$
 
-/* ══ MÉTODO 2: echelon + sustitución regresiva ═══════════════════ */
-/* Crear matriz aumentada [M(7) | b(7)] */
-Aug: addcol(M(7), b(7))$
-print("Matriz aumentada [M|b] =")$
-print(Aug)$
+/* ══ MÉTODO 2: echelon + sustitución regresiva ═══════════════════════ */
+/* El profesor usa esta forma de definir la sustitución con arrays */
 
-/* Reducir a forma escalonada */
-E: echelon(Aug)$
+AMPLI: addcol(M(7), transpose(matrix(b(7))))$
+ESC: echelon(AMPLI)$
 print("Forma escalonada:")$
-print(E)$
+print(ESC)$
 
-/* Sustitución regresiva: resolver de abajo arriba */
-back_sub(E, n) := block(
-    [x, i, j, s],
-    x: makelist(0, k, 1, n),
-    for i:n thru 1 step -1 do (     /* desde la última fila hacia arriba */
-        s: E[i][n+1],                /* término independiente */
-        for j:i+1 thru n do
-            s: s - E[i][j] * x[j],  /* restar los ya calculados */
-        x[i]: ratsimp(s / E[i][i])  /* despejar x[i] */
-    ),
-    x
+/* Sustitución regresiva — estilo del profesor */
+usandoechelon(MM, bb) := block(
+    kill(X),
+    dim: length(bb),
+    AMPLI2: addcol(MM, transpose(matrix(bb))),
+    ESC2: echelon(AMPLI2),
+    X[i] := if i = dim
+             then ESC2[dim, dim+1]
+             else ESC2[i, dim+1] - sum(ESC2[i,k]*X[k], k, i+1, dim),
+    makelist(x[i] = X[i], i, 1, dim)
 )$
 
-X2: back_sub(E, 7)$
-print("Solución por echelon:")$
-print(X2)$
+sol: usandoechelon(M(7), b(7))$
+print("Solución por echelon:", sol)$
+suma2: sum(rhs(sol[i]), i, 1, 7)$
+print("x1 + ... + x7 =", suma2)$
 
-suma2: sum(X2[i], i, 1, 7)$
-print("x1 + x2 + ... + x7 =", suma2)$
-
-/* ── Verificación: ambos métodos deben dar el mismo resultado ─── */
-print("¿Soluciones iguales?", ratsimp(X1[1][1] - X2[1]) = 0)$
+/* ── Verificación ─────────────────────────────────────────────────── */
+print("¿Ambos métodos coinciden?", ratsimp(suma1 - suma2) = 0)$
+print("Verificación M·X1 - b (debe ser 0):", M(7) . X1 - transpose(matrix(b(7))))$
 ```
 
 ### Qué aspecto tiene M(7)
 
 ```
-M(7) = 
+M(7) =
 ( 11  1  1  0  0  0  0 )
 (  1 11  1  1  0  0  0 )
 (  1  1 11  1  1  0  0 )
@@ -301,15 +269,16 @@ M(7) =
 (  0  0  0  0  1  1 11 )
 ```
 
-La diagonal vale 11. Los elementos con $|i-j|=1$ (vecinos inmediatos) valen 1. Los con $|i-j|=2$ también valen 1. El resto son 0.
+La diagonal vale 11. Los elementos con $|i-j| < 3$ (vecinos a distancia 1 o 2) valen 1. El resto son 0.
 
 ### Errores típicos en este ejercicio
 
 | Error | Solución |
 |-------|---------|
-| Usar `*` para multiplicar matrices | Usar `.` (punto): `invert(M(7)) . b(7)` |
-| `X1[i]` en vez de `X1[i][1]` | El resultado de `invert(A).b` es una matriz columna, los elementos son `X1[i][1]` |
+| Usar `*` para multiplicar matrices | Usar `.` (punto): `invert(M(7)) . b` |
+| `X1[i]` en vez de `X1[i][1]` | El resultado de `invert(A).b` es una matriz columna |
 | `echelon` devuelve fracciones raras | Normal, es la forma racional exacta |
+| `b(n)` como lista vs matriz columna | Ojo con el formato — `transpose(matrix(b(7)))` lo convierte |
 
 ---
 
@@ -321,211 +290,208 @@ Definir `Lagrange(fun, nodos)` que devuelva el polinomio interpolador de `fun` e
 
 ### La fórmula de Lagrange
 
-$$P(x) = \sum_{i=1}^{n} f(\text{nodos}_i) \cdot \underbrace{\prod_{j=1, j\neq i}^{n} \frac{x - \text{nodos}_j}{\text{nodos}_i - \text{nodos}_j}}_{L_i(x)}$$
-
-Cada $L_i(x)$ vale 1 en el nodo $i$ y 0 en todos los demás. El producto final es el polinomio que pasa exactamente por todos los puntos.
+$$P(x) = \sum_{i=1}^{n} f(\text{nodos}_i) \cdot \prod_{\substack{j=1 \\ j\neq i}}^{n} \frac{x - \text{nodos}_j}{\text{nodos}_i - \text{nodos}_j}$$
 
 ### Código completo
 
 ```maxima
 kill(all)$
 
-/* ── Definir la función Lagrange ──────────────────────────────── */
-Lagrange(fun, nodos) := expand(        /* expand simplifica el polinomio */
+Lagrange(fun, nodos) := expand(
     sum(
-        fun(nodos[i]) *                /* valor de la función en el nodo i */
+        fun(nodos[i]) *
         product(
-            (x - nodos[j]) / (nodos[i] - nodos[j]),  /* factor L_i */
+            (x - nodos[j]) / (nodos[i] - nodos[j]),
             j, 1, length(nodos),
-            j # i                      /* j distinto de i */
+            j # i
         ),
         i, 1, length(nodos)
     )
 )$
 
-/* ── TEST: polinomio de grado 6, 7 nodos ─────────────────────── */
+/* ── TEST: polinomio de grado 6, 7 nodos ─────────────────────────── */
+define(p(x), x^6 - 2*x^5 + 3*x^4 - x^3 + x - 1)$
 
-/* Función de prueba: cualquier polinomio de grado 6 funciona */
-define(p(x), x^6 - 3*x^5 + 2*x^4 - x^3 + 4*x^2 - x + 1)$
-
-/* 7 nodos equiespaciados en [-3, 3] */
-nodos7: makelist(-3 + k, k, 0, 6)$
-/* = [-3, -2, -1, 0, 1, 2, 3] */
+/* 7 nodos equiespaciados en [-1, 1]: [-1, -2/3, -1/3, 0, 1/3, 2/3, 1] */
+nodos7: makelist(-1 + 2*i/6, i, 0, 6)$
 print("Nodos:", nodos7)$
 
-/* Calcular polinomio de Lagrange */
 P: Lagrange(p, nodos7)$
-print("Polinomio interpolante P(x) =", P)$
 
-/* VERIFICACIÓN: P(x) debe ser igual a p(x) */
-/* Si la diferencia es 0, la función es correcta */
-diferencia: expand(P - p(x))$
-print("P(x) - p(x) =", diferencia, " (debe ser 0)")$
+/* VERIFICACIÓN: P(x) - p(x) debe ser 0 */
+error15: expand(P - p(x))$
+print("P(x) - p(x) =", error15, "(debe ser 0)")$
 
-/* Verificar también en un punto concreto */
+if error15 = 0
+    then print("✅ Interpolación exacta")
+    else print("❌ Error en Lagrange")$
+
 print("P(0.5) =", float(subst(x=0.5, P)))$
 print("p(0.5) =", float(p(0.5)))$
-print("Error puntual:", abs(float(subst(x=0.5,P)) - p(0.5)))$
 ```
 
 ### Por qué usar `expand`
 
-Sin `expand`, el resultado es el producto de factores no simplificado. Con `expand`, Maxima lo convierte en $a_6 x^6 + a_5 x^5 + \cdots + a_0$, que es reconocible y comparable con el polinomio original.
-
-### ¿Qué pasa si cambias los nodos?
-
-```maxima
-/* Nodos distintos: puntos no equiespaciados */
-nodos_alt: [-3, -1, 0, 1/2, 1, 2, 3]$
-P2: Lagrange(p, nodos_alt)$
-expand(P2 - p(x))$  /* sigue siendo 0: no depende de los nodos para polinomios */
-```
-
-Para un polinomio de grado $n$ con $n+1$ nodos, el interpolante es siempre exacto independientemente de dónde estén los nodos.
+Sin `expand`, el resultado es el producto de factores no simplificado. Con `expand`, Maxima lo convierte en $a_6 x^6 + \cdots + a_0$, comparable con el polinomio original.
 
 ---
 
-## Ejercicio 20 (TÚ ELIGES — Página 5) — Trapecio compuesto con $n = 10^5$
+## Ejercicio 20 (TÚ ELIGES — Página 5) — Integración numérica compuesta
 
 ### ¿Qué pide?
 
-Calcular $\displaystyle\int_0^2 \left(\frac{x^5}{60} - \frac{x^6}{360} - x^2\right) dx$ usando el **método del trapecio compuesto** con $n = 10^5$ subintervalos. Indicar el error absoluto y comprobar que es menor que la cota teórica.
+Implementar `trapecio_comp(fu, a, b, n)` y/o `simpson_comp(fu, a, b, n)`. Aplicar para calcular una integral concreta con $n$ subintervalos, comparar con `quad_qags` y calcular el error.
 
-### Por qué es fácil
+### Fórmulas
 
-No hay que diseñar ningún algoritmo inteligente. Solo aplicar la fórmula:
+**Trapecio compuesto** ($h = (b-a)/n$):
+$$T_n = \frac{h}{2}\left[f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n)\right]$$
 
-$$T_n = \frac{h}{2}\left[f(x_0) + 2f(x_1) + 2f(x_2) + \cdots + 2f(x_{n-1}) + f(x_n)\right], \quad h = \frac{b-a}{n}$$
+**Simpson compuesto** ($n$ par, $h = (b-a)/n$):
+$$S_n = \frac{h}{3}\left[f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \cdots + 4f(x_{n-1}) + f(x_n)\right]$$
 
-Es una suma con patrón $1, 2, 2, \ldots, 2, 1$ multiplicada por $h/2$.
-
-### La cota de error teórica
-
-$$|E_T| \leq \frac{(b-a)^3 \cdot M_2}{12\,n^2}, \quad M_2 = \max_{x \in [0,2]}|f''(x)|$$
-
-### Calcular $M_2$ antes del código
-
-$f(x) = \dfrac{x^5}{60} - \dfrac{x^6}{360} - x^2$
-
-$f'(x) = \dfrac{x^4}{12} - \dfrac{x^5}{60} - 2x$
-
-$f''(x) = \dfrac{x^3}{3} - \dfrac{x^4}{12} - 2$
-
-En $[0, 2]$: $f''(0) = -2$, $f''(2) = \frac{8}{3} - \frac{16}{12} - 2 = \frac{8}{3} - \frac{4}{3} - 2 = \frac{4}{3} - 2 = -\frac{2}{3}$
-
-Como $f'''(x) = x^2 - x^3/3 \geq 0$ para $x \in [0,2]$, $f''$ es creciente → el máximo de $|f''|$ está en $x=0$: $M_2 = 2$.
-
-Cota: $\dfrac{(2)^3 \cdot 2}{12 \cdot (10^5)^2} = \dfrac{16}{12 \times 10^{10}} \approx 1.33 \times 10^{-10}$
+Patrón de coeficientes Simpson: $1, 4, 2, 4, 2, \ldots, 4, 1$
 
 ### Código completo
 
 ```maxima
 kill(all)$
 
-/* ── Definir la función ────────────────────────────────────────── */
-define(g(x), x^5/60 - x^6/360 - x^2)$
+/* ── Trapecio compuesto ───────────────────────────────────────────── */
+trapecio_comp(fu, a, b, n) := block(
+    [h, s, i],
+    h: float(b-a)/n,
+    s: fu(a) + fu(b),                    /* extremos con coef. 1 */
+    for i:1 thru n-1 do
+        s: s + 2*fu(a + i*h),            /* interiores con coef. 2 */
+    h/2 * s
+)$
 
-/* ── Valor exacto (Maxima lo calcula simbólicamente) ──────────── */
-exact: integrate(g(x), x, 0, 2)$
-print("Integral exacta:", exact, "=", float(exact))$
-/* Resultado: exact = -160/63 ≈ -2.5397 */
+/* ── Simpson compuesto ────────────────────────────────────────────── */
+simpson_comp(fu, a, b, n) := block(
+    [h, s, i],
+    h: float(b-a)/n,
+    s: fu(a) + fu(b),                    /* extremos con coef. 1 */
+    for i:1 thru n-1 do
+        if oddp(i)
+        then s: s + 4*fu(a + i*h)        /* impar → coef. 4 */
+        else s: s + 2*fu(a + i*h),       /* par   → coef. 2 */
+    h/3 * s
+)$
 
-/* ── Trapecio compuesto con n = 100000 ───────────────────────── */
-n: 100000$
-a: 0.0$          /* usar decimales (float) para que el bucle sea rápido */
-b: 2.0$
-h: (b - a) / n$
+/* ── Aplicación: ∫₀¹ sin(x²) dx con n=10 ─────────────────────────── */
+define(g(x), sin(x^2))$
 
-/* Suma con patrón: f(a) + 2*f(x1) + 2*f(x2) + ... + 2*f(x_{n-1}) + f(b) */
-S: g(a) + g(b)$                        /* los extremos cuentan 1 vez */
-for k:1 thru n-1 do
-    S: S + 2.0 * g(a + k * h)$         /* los interiores cuentan 2 veces */
-T: h * S / 2.0$
-print("Trapecio compuesto:", T)$
+/* Valor de referencia con quad_qags */
+I_exacta: quad_qags(g(x), x, 0, 1)[1]$   /* [1] extrae solo el valor numérico */
 
-/* ── Error absoluto ───────────────────────────────────────────── */
-error_abs: abs(T - float(exact))$
-print("Error absoluto:", error_abs)$
+I_trap: trapecio_comp(g, 0, 1, 10)$
+I_simp: simpson_comp(g, 0, 1, 10)$
 
-/* ── Cota teórica ─────────────────────────────────────────────── */
-M2: 2$     /* max|f''| en [0,2] = |f''(0)| = |-2| = 2 */
-cota: float((b - a)^3 * M2 / (12 * n^2))$
-print("Cota teórica:", cota)$
+print("quad_qags:  ", I_exacta)$
+print("Trapecio:   ", I_trap)$
+print("Simpson:    ", I_simp)$
+print("Error trap: ", abs(I_trap - I_exacta))$
+print("Error simp: ", abs(I_simp - I_exacta))$
 
-/* ── Verificación: ¿error < cota? ─────────────────────────────── */
-print("¿Error absoluto < cota teórica?", error_abs < cota)$
-/* Debe imprimir: true */
+/* Simpson debe ser ~100x más preciso (O(h⁴) vs O(h²)) */
+if abs(I_simp - I_exacta) < abs(I_trap - I_exacta)
+    then print("✅ Simpson más preciso que Trapecio")
+    else print("❌ Revisar coeficientes")$
 ```
 
-### Qué esperar de la salida
+### Puntos clave
 
-```
-Integral exacta: -160/63 = -2.539682539...
-Trapecio compuesto: -2.539682538...
-Error absoluto: ~8.5e-11
-Cota teórica: 1.33e-10
-¿Error absoluto < cota teórica? true
-```
-
-### Por qué el bucle no es lento
-
-Con `a: 0.0` y `b: 2.0` (decimales, no enteros), Maxima hace aritmética flotante en el bucle. Si pusieras `a: 0` y `b: 2` (enteros), haría aritmética simbólica — extremadamente lento para 100000 iteraciones.
+- `quad_qags(f(x), x, a, b)[1]` — el `[1]` es obligatorio, extrae el valor (el resto son códigos de error, etc.)
+- `float(b-a)/n` — usar `float` para que el bucle sea rápido (aritmética decimal, no simbólica)
+- `oddp(i)` devuelve `true` si `i` es impar — útil para los coeficientes de Simpson
+- `n` debe ser **par** en Simpson
 
 ---
 
 ## Referencia rápida — Maxima esencial
 
-### Lo que más se usa en el examen
+### Setup obligatorio
 
 ```maxima
-/* Alta precisión */
-fpprec: 160$
-bfloat(expr)          /* evaluar con 160 dígitos */
-bfloat(10)^(-155)     /* tolerancia de 155 dígitos */
+kill(all)$
+fpprec: 400$
+```
 
-/* Definir funciones */
+### Alta precisión
+
+```maxima
+bfloat(expr)           /* evaluar con fpprec dígitos */
+10^(-155)              /* tolerancia para 150 dígitos — entero exacto, no bfloat() */
+bfloat(resultado)      /* ver en decimal un resultado que sale como fracción */
+```
+
+### Definir funciones
+
+```maxima
 define(f(x), x^2 - bfloat(3))$
-define(dfu(t), diff(fu(t), t, 1))$   /* derivada automática */
+define(dfu(x), diff(fu(x), x, 1))$    /* derivada automática */
+```
 
-/* Listas y matrices */
+### Listas y matrices
+
+```maxima
 makelist(expr, i, a, b)               /* crear lista */
 zeromatrix(n, n)                      /* matriz de ceros */
+apply('matrix, makelist(...))         /* construir matriz desde listas */
 A[i][j]: valor$                       /* asignar elemento */
+```
 
-/* Operaciones matriciales */
+### Operaciones matriciales
+
+```maxima
 invert(A)                             /* inversa */
-A . B                                 /* producto matricial (punto, NO asterisco) */
+A . B                                 /* producto matricial (PUNTO, no asterisco) */
 addcol(A, b)                          /* añadir columna: [A|b] */
 echelon(A)                            /* forma escalonada */
 transpose(A)                          /* transpuesta */
+```
 
-/* Álgebra */
+### Álgebra y cálculo
+
+```maxima
 expand(expr)                          /* expandir (imprescindible en Lagrange) */
 ratsimp(expr)                         /* simplificar fracción */
 float(expr)                           /* convertir a decimal */
+bfloat(expr)                          /* decimal con alta precisión */
 subst(x=val, expr)                    /* sustituir valor */
 diff(f(x), x, n)                      /* derivada n-ésima */
-integrate(f(x), x, a, b)             /* integral definida */
+integrate(f(x), x, a, b)             /* integral simbólica */
+quad_qags(f(x), x, a, b)[1]          /* integral numérica */
+```
 
-/* Control de flujo */
-block([vars_locales], ..., retorno)   /* función con variables locales */
+### Control de flujo
+
+```maxima
+block([vars], ..., retorno)           /* función con variables locales */
 while condicion do (...)              /* bucle while */
 for i:1 thru n do (...)              /* bucle for */
 for i:n thru 1 step -1 do (...)      /* bucle for inverso */
 if cond then ... else ...$            /* condicional */
-return(valor)                         /* salir de block */
+oddp(n), evenp(n)                     /* paridad */
 ```
 
-### Errores que cuestan puntos
+---
+
+## Errores que cuestan puntos
 
 | Error | Síntoma | Corrección |
 |-------|---------|-----------|
 | `A * B` para matrices | Resultado incorrecto silencioso | Usar `A . B` |
-| Olvidar `bfloat()` en los extremos de `bisec` | Precisión de 15 dígitos aunque `fpprec=160` | `bisec(f, bfloat(1), bfloat(2), ...)` |
-| `return()` fuera de `block` | No hace nada | Siempre dentro de `block([...], ...)` |
-| Índice 0 en lista | Error "índice fuera de rango" | Maxima usa **base 1**: `L[1]` es el primer elemento |
-| `X1[i]` en vez de `X1[i][1]` | Error de dimensión | El resultado de `invert(A).b` es una **matriz columna** |
-| `sum(f(i),i,1,n)` con n=10^5 | Extremadamente lento | Usar bucle `for` con valores `float` |
+| `block()` en bisec **recursiva** | Stack overflow / crash | Puro `if-then-else`, sin `block` |
+| `bfloat(1), bfloat(2)` como args de bisec | Precisión baja o lentitud | Usar enteros exactos: `1, 2` |
+| `fpprec: 160` | Podría fallar con margen justo | Usar `fpprec: 400` |
+| Resultado de bisec en fracción | Confusión | Normal — usar `bfloat(resultado)` para ver decimal |
+| `return()` fuera de `block` | No hace nada | Solo dentro de `block([...], ...)` |
+| Índice 0 en lista | Error "índice fuera de rango" | Maxima usa **base 1**: `L[1]` es el primero |
+| `X1[i]` en vez de `X1[i][1]` | Error de dimensión | Resultado de `invert(A).b` es **matriz columna** |
+| `n` impar en Simpson | Resultado erróneo | Simpson compuesto requiere `n` **par** |
+| Olvidar `[1]` en `quad_qags` | Devuelve lista, no número | `quad_qags(...)[1]` |
 | Olvidar `kill(all)` al inicio | Variables de sesión anterior interfieren | Siempre empezar con `kill(all)` |
 
 ---
@@ -553,13 +519,13 @@ return(valor)                         /* salir de block */
 | 17 | Raíz cuarta de una matriz | 4 | Alta |
 | 18 | sin(M) y cos(M) de una matriz | 4 | Media |
 | 19 | exp(A) via interpolación, verificar con serie | 4 | Alta |
-| **20** | Trapecio compuesto, $n=10^5$, cota de error | 5 | ⭐ Fácil |
-| 21 | Simpson compuesto, $n=10^5$, cota de error | 5 | Fácil |
+| **20** | Trapecio/Simpson compuesto + `quad_qags` | 5 | ⭐ Fácil |
+| 21 | Simpson compuesto, cota de error | 5 | Fácil |
 | 22 | Área por Montecarlo (1 millón de simulaciones) | 5 | Media |
-| 23 | Máximo/mínimo de $f(x)=e^{-x^2+x}\sin(x+\cos x)$ | 5 | Media |
+| 23 | Máximo/mínimo numérico | 5 | Media |
 
-> **Resumen de elección**: Ej 2 (página 1) + Ej 20 (página 5) son los más directos. Si prefieres variante: Ej 3 (página 1) + Ej 21 (página 5) es igual de fácil — Simpson es casi idéntico al trapecio.
+> **Resumen de elección**: Ej 2 (página 1) + Ej 20 (página 5) son los más directos. Alternativa igual de fácil: Ej 3 (página 1) + Ej 21 (página 5).
 
 ---
 
-*Actualizado: 2026-04-24 · Fuente: final2026.pdf (23 ejercicios) + Sesiones PL 1–8*
+*Actualizado: 2026-04-28 · Fuente: final2026.pdf (23 ejercicios) + Sesiones PL 1–8 (wxmx analizados)*
